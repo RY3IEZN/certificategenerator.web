@@ -13,7 +13,10 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
+<<<<<<< HEAD:Frontend/src/pages/ComingSoon/Comingsoon.scss
     
+=======
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/Coming/Comingsoon.scss
   }
   .welcome {
     width: 100%;
@@ -49,7 +52,11 @@
     gap: 44px;
   }
   .f1 {
+<<<<<<< HEAD:Frontend/src/pages/ComingSoon/Comingsoon.scss
     width: 500px;
+=======
+    width: 400px;
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/Coming/Comingsoon.scss
     font-family: 'Sora';
     font-style: normal;
     font-weight: 700;
@@ -80,6 +87,7 @@
     flex-direction: column;
     max-width: 1240px;
   }
+<<<<<<< HEAD:Frontend/src/pages/ComingSoon/Comingsoon.scss
   .emyform{
     display: flex;
     gap: 20px;
@@ -88,6 +96,10 @@
   }
   .email {
     height: 49px;
+=======
+  .email {
+    height: 43px;
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/Coming/Comingsoon.scss
     width: 388px;
     background: #FFFFFF;
     border: 1.2px solid 0.01AA6E;
@@ -102,6 +114,10 @@
     justify-content: center;
     background: 0.19A68E;
     border-radius: 10px;
+<<<<<<< HEAD:Frontend/src/pages/ComingSoon/Comingsoon.scss
+=======
+
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/Coming/Comingsoon.scss
     height: 49px;
     border: none;
     flex: none;
@@ -116,7 +132,10 @@
     align-items: center;
     letter-spacing: -0.004em;
     color: #ffffff;
+<<<<<<< HEAD:Frontend/src/pages/ComingSoon/Comingsoon.scss
     margin-bottom: 15px;
+=======
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/Coming/Comingsoon.scss
   }
   // .form{
   //     display: flex;
@@ -186,7 +205,11 @@
     .p,
     .f1,
     .welcomeHead {
+<<<<<<< HEAD:Frontend/src/pages/ComingSoon/Comingsoon.scss
       width: 500px;
+=======
+      width: 400px;
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/Coming/Comingsoon.scss
     }
   }
   @media screen and (max-width: 1024px) {
@@ -194,7 +217,11 @@
       width: 400px;
     }
     .f1 {
+<<<<<<< HEAD:Frontend/src/pages/ComingSoon/Comingsoon.scss
       font-size: 36px;
+=======
+      font-size: 48px;
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/Coming/Comingsoon.scss
       width: 300px;
     }
     .p {
@@ -213,6 +240,7 @@
     }
   }
   @media screen and (max-width: 768px) {
+<<<<<<< HEAD:Frontend/src/pages/ComingSoon/Comingsoon.scss
     
     .welcomeHead {  width: 100%;
       
@@ -221,6 +249,14 @@
       width: 300px;
       font-size: 24px;
       font-weight: 500px;
+=======
+    .f1,
+    .welcomeHead {
+      width: 250px;
+    }
+    .f1 {
+      font-size: 24px;
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/Coming/Comingsoon.scss
     }
     .p {
       font-size: 12px;
@@ -233,7 +269,11 @@
       width: 300px;
     }
     .cons_img {
+<<<<<<< HEAD:Frontend/src/pages/ComingSoon/Comingsoon.scss
       width: 200px;
+=======
+      width: 300px;
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/Coming/Comingsoon.scss
       display: flex;
     }
   }
@@ -243,8 +283,11 @@
     .formdat,
     footer {
       display: flex;
+<<<<<<< HEAD:Frontend/src/pages/ComingSoon/Comingsoon.scss
       justify-content: center;
       align-items: center;
+=======
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/Coming/Comingsoon.scss
     }
     .cons_img {
       width: 300px;
@@ -253,6 +296,7 @@
     footer {
       flex-direction: column;
     }
+<<<<<<< HEAD:Frontend/src/pages/ComingSoon/Comingsoon.scss
     .f1 {display: flex;
       align-items: center;
       justify-content: center;
@@ -269,14 +313,28 @@
     }
     .email {
       width: 150px;
+=======
+    .f1 {
+      font-size: 24px;
+      width: 150px;
+    }
+    .p {
+      font-size: 14px;
+    }
+    .email {
+      width: 200px;
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/Coming/Comingsoon.scss
     }
     footer > ul {
       width: 60%;
     }
+<<<<<<< HEAD:Frontend/src/pages/ComingSoon/Comingsoon.scss
     .welcomeHead{
       width: 100%;
       display: flex; justify-content: center; align-items: center;
     }
     
+=======
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/Coming/Comingsoon.scss
   }
 }

@@ -3,7 +3,10 @@ import { Link, useLocation } from "react-router-dom";
 import logo from "./assets/icon.png";
 import "./footer.style.scss";
 import { BsInstagram, BsLinkedin, BsTwitter, BsGithub } from "react-icons/bs";
+<<<<<<< HEAD:Frontend/src/Component/Footer/index.jsx
 import { useEffect } from "react";
+=======
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/Footer/index.jsx
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -101,6 +104,7 @@ const Footer = () => {
           <div className="footer-socials">
             <h3>We are social</h3>
             <div>
+<<<<<<< HEAD:Frontend/src/Component/Footer/index.jsx
               <a
                 href="https://instagram.com/hnginternship?igshid=YmMyMTA2M2Y="
                 target="_blank"
@@ -125,6 +129,12 @@ const Footer = () => {
               >
                 <BsGithub className="social" />
               </a>
+=======
+              <BsInstagram className="social" />
+              <BsLinkedin className="social" />
+              <BsTwitter className="social" />
+              <BsGithub className="social" />
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/Footer/index.jsx
             </div>
           </div>
         </div>

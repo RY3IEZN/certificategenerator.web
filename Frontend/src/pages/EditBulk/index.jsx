@@ -4,7 +4,11 @@ import "./edit.style.scss";
 
 function Index() {
   return (
+<<<<<<< HEAD:Frontend/src/pages/EditBulk/index.jsx
     <div id="edit-bulk">
+=======
+    <div id="edit">
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/EditBulk/index.jsx
       {/* BUTTONS TO TOGGLE BETWEEN SINGLE AND BULK CERTIFICATE */}
 
       <div className="button-container">

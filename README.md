@@ -1,4 +1,5 @@
 # Certificategenerator.web
+<<<<<<< HEAD
 
 This is the Certificategenerator application built with [React](https://reactjs.org/) (Frontend) and  [Node](https://nodejs.org/) (Backend)
 
@@ -63,3 +64,5 @@ npm prettify # to prettify files # in project directory
 ```
 
 you can also lint for all files in the repo by running that command in the root folder.
+=======
+>>>>>>> 00810070 (fix: fixed general styling)

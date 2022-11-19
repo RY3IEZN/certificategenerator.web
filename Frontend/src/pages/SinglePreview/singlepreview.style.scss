@@ -2,6 +2,7 @@
 
 // BUTTON CONTAINER FOR THE TOGGLE BUTTONS
 
+<<<<<<< HEAD:Frontend/src/pages/SinglePreview/singlepreview.style.scss
 
 #singlePreview{
   text-align:center!important;
@@ -12,6 +13,9 @@
     padding: 10px;
   }
 
+=======
+#singlePreview{
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/SinglePreview/singlepreview.style.scss
 .button-container button {
   margin: 0px 10px 15px 10px;
   height: 37px;
@@ -200,5 +204,6 @@ h2{
     height: 55px;
     font-size:18px;
   }
+}
 }
 }

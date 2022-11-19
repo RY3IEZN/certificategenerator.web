@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&display=swap");
+<<<<<<< HEAD:Frontend/src/pages/AboutUs/aboutUs.style.css
 #aboutUs body {
+=======
+body {
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/AboutUs/aboutUs.style.css
   background-color: #ffffff;
   padding: 0;
   margin: 0;
@@ -9,50 +13,95 @@
   box-sizing: border-box;
   text-decoration: none;
 }
+<<<<<<< HEAD:Frontend/src/pages/AboutUs/aboutUs.style.css
 #aboutUs h1,
 #aboutUs h2,
 #aboutUs h3,
 #aboutUs h4,
 #aboutUs h5,
 #aboutUs h6 {
+=======
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/AboutUs/aboutUs.style.css
   text-align: left;
   letter-spacing: -0.004em;
   color: #222222;
   margin: 0;
   padding: 0;
 }
+<<<<<<< HEAD:Frontend/src/pages/AboutUs/aboutUs.style.css
 #aboutUs h1 {
+=======
+
+h1 {
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/AboutUs/aboutUs.style.css
   font-size: 64px;
   font-weight: 700;
   line-height: 75px;
 }
+<<<<<<< HEAD:Frontend/src/pages/AboutUs/aboutUs.style.css
 #aboutUs h2 {
+=======
+
+h2 {
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/AboutUs/aboutUs.style.css
   font-size: 48px;
   font-weight: 700;
   line-height: 56px;
 }
+<<<<<<< HEAD:Frontend/src/pages/AboutUs/aboutUs.style.css
 #aboutUs h3 {
+=======
+
+h3 {
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/AboutUs/aboutUs.style.css
   font-size: 40px;
   font-weight: 700;
   line-height: 47px;
   text-align: center;
 }
+<<<<<<< HEAD:Frontend/src/pages/AboutUs/aboutUs.style.css
 #aboutUs h4 {
+=======
+
+h4 {
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/AboutUs/aboutUs.style.css
   font-size: 24px;
   font-weight: 500;
   line-height: 28px;
 }
+<<<<<<< HEAD:Frontend/src/pages/AboutUs/aboutUs.style.css
 #aboutUs h5 {
+=======
+
+h5 {
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/AboutUs/aboutUs.style.css
   font-size: 22px;
   font-weight: 400;
   line-height: 26px;
 }
+<<<<<<< HEAD:Frontend/src/pages/AboutUs/aboutUs.style.css
 #aboutUs h6 {
+=======
+
+h6 {
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/AboutUs/aboutUs.style.css
   font-size: 20px;
   font-weight: 400;
   line-height: 23px;
 }
+<<<<<<< HEAD:Frontend/src/pages/AboutUs/aboutUs.style.css
 #aboutUs .btn {
+=======
+
+.btn {
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/AboutUs/aboutUs.style.css
   width: 163px;
   color: #ffffff;
   background: #19A68E;
@@ -65,13 +114,18 @@
   letter-spacing: -0.004em;
 }
 
+<<<<<<< HEAD:Frontend/src/pages/AboutUs/aboutUs.style.css
 .aboutstroke {
+=======
+.stroke {
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/AboutUs/aboutUs.style.css
   background: #19A68E;
   align-items: center;
   border-radius: 8px;
   width: 114px;
   height: 10px;
 }
+<<<<<<< HEAD:Frontend/src/pages/AboutUs/aboutUs.style.css
 #aboutUs .aboutNav {
   height: 100px;
 }
@@ -80,36 +134,73 @@
   padding: 0 100px;
 }
 #aboutUs .aboutHeroL {
+=======
+
+.aboutNav {
+  height: 100px;
+}
+
+.aboutHero {
+  display: flex;
+  padding: 0 100px;
+}
+
+.aboutHeroL {
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/AboutUs/aboutUs.style.css
   display: flex;
   flex-direction: column;
   gap: 20px;
   width: 50%;
   padding: 131px 0 207px;
 }
+<<<<<<< HEAD:Frontend/src/pages/AboutUs/aboutUs.style.css
 #aboutUs .aboutHeroL h4 {
   padding-bottom: 14px;
 }
 #aboutUs .aboutHeroR {
+=======
+
+.aboutHeroL h4 {
+  padding-bottom: 14px;
+}
+
+.aboutHeroR {
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/AboutUs/aboutUs.style.css
   position: absolute;
   top: 0;
   right: 0;
 }
+<<<<<<< HEAD:Frontend/src/pages/AboutUs/aboutUs.style.css
 #aboutUs .aboutAbout {
+=======
+
+.aboutAbout {
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/AboutUs/aboutUs.style.css
   display: flex;
   padding: 100px;
   gap: 10%;
   background: #F8F8F8;
   align-items: center;
 }
+<<<<<<< HEAD:Frontend/src/pages/AboutUs/aboutUs.style.css
 #aboutUs #mission {
   background: #ffffff;
 }
 #aboutUs .aboutAboutD {
+=======
+
+#mission {
+  background: #ffffff;
+}
+
+.aboutAboutD {
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/AboutUs/aboutUs.style.css
   width: 45%;
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
+<<<<<<< HEAD:Frontend/src/pages/AboutUs/aboutUs.style.css
 #aboutUs .aboutAboutD h3 {
   text-align: left;
 }
@@ -127,22 +218,62 @@
   padding: 75px 0 148px 100px;
 }
 #aboutUs .aboutValue h2 {
+=======
+
+.aboutAboutD h3 {
+  text-align: left;
+}
+
+.aboutAboutD h4 {
+  padding-bottom: 16px;
+}
+
+.aboutAboutImg {
+  width: 45%;
+}
+
+.aboutAboutImg img {
+  width: 100%;
+  height: 70%;
+}
+
+.aboutValue {
+  padding: 75px 0 148px 100px;
+}
+
+.aboutValue h2 {
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/AboutUs/aboutUs.style.css
   text-align: center;
   color: #19A68E;
   padding-bottom: 37px;
 }
+<<<<<<< HEAD:Frontend/src/pages/AboutUs/aboutUs.style.css
 #aboutUs #vh4 {
   text-align: center;
   padding: 0 20% 0 20%;
 }
 #aboutUs .aboutValueS {
+=======
+
+#vh4 {
+  text-align: center;
+  padding: 0 20% 0 20%;
+}
+
+.aboutValueS {
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/AboutUs/aboutUs.style.css
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 40px;
   padding-top: 51px;
   overflow: scroll;
 }
+<<<<<<< HEAD:Frontend/src/pages/AboutUs/aboutUs.style.css
 #aboutUs .aboutValueCard {
+=======
+
+.aboutValueCard {
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/AboutUs/aboutUs.style.css
   width: 500px;
   height: 240px;
   position: relative;
@@ -153,13 +284,19 @@
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.1019607843);
   box-shadow: 0px 32px 19px 0px rgba(0, 0, 0, 0.0509803922);
 }
+<<<<<<< HEAD:Frontend/src/pages/AboutUs/aboutUs.style.css
 #aboutUs .aboutValueCardD {
+=======
+
+.aboutValueCardD {
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/AboutUs/aboutUs.style.css
   display: flex;
   gap: 22px;
   position: absolute;
   bottom: 24px;
   align-items: center;
 }
+<<<<<<< HEAD:Frontend/src/pages/AboutUs/aboutUs.style.css
 #aboutUs #v2h4 {
   padding-bottom: 12px;
 }
@@ -185,19 +322,64 @@
   padding-top: 14px;
 }
 #aboutUs .aboutGallery {
+=======
+
+#v2h4 {
+  padding-bottom: 12px;
+}
+
+.aboutService {
+  padding: 39px 100px 60px;
+  background: #F8F8F8;
+}
+
+.aboutService h3 {
+  padding-bottom: 16px;
+}
+
+.aboutServiceS {
+  padding: 68px 0 84px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+.aboutServiceCard {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  padding: 24px;
+}
+
+.aboutServiceCardT h5 {
+  padding-top: 14px;
+}
+
+.aboutGallery {
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/AboutUs/aboutUs.style.css
   background: #F8F8F8;
   padding: 50px 100px 38px;
   margin-bottom: 59px;
 }
+<<<<<<< HEAD:Frontend/src/pages/AboutUs/aboutUs.style.css
 #aboutUs .aboutGallery h3 {
   padding-bottom: 17px;
 }
 #aboutUs .aboutGalleryS {
+=======
+
+.aboutGallery h3 {
+  padding-bottom: 17px;
+}
+
+.aboutGalleryS {
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/AboutUs/aboutUs.style.css
   padding-top: 63px;
   display: grid;
   gap: 40px;
   grid-template-columns: 1fr 1fr 1fr;
 }
+<<<<<<< HEAD:Frontend/src/pages/AboutUs/aboutUs.style.css
 #aboutUs .aboutGalleryS img {
   width: 100%;
 }
@@ -234,10 +416,52 @@
     padding: 0 44px;
   }
   #aboutUs .aboutHeroL {
+=======
+
+.aboutGalleryS img {
+  width: 100%;
+}
+
+.aboutFooter {
+  height: 443px;
+  background: #08372F;
+}
+
+@media screen and (max-width: 1024px) {
+  h1 {
+    font-size: 32px;
+    line-height: 38px;
+  }
+  h2 {
+    font-size: 40px;
+    line-height: 47px;
+  }
+  h4 {
+    font-size: 18px;
+    line-height: 21px;
+  }
+  h5,
+h6 {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .btn {
+    width: 111px;
+    padding: 17.5px 26px;
+  }
+  .aboutNav {
+    height: 68px;
+  }
+  .aboutHero {
+    padding: 0 44px;
+  }
+  .aboutHeroL {
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/AboutUs/aboutUs.style.css
     gap: 24px;
     padding: 51px 0 120px;
     width: 45%;
   }
+<<<<<<< HEAD:Frontend/src/pages/AboutUs/aboutUs.style.css
   #aboutUs .aboutHeroL h4 {
     padding-bottom: 11px;
   }
@@ -265,16 +489,50 @@
     padding: 0 10%;
   }
   #aboutUs .aboutValueCard {
+=======
+  .aboutHeroL h4 {
+    padding-bottom: 11px;
+  }
+  .aboutHeroR img {
+    height: 380px;
+    width: 380px;
+  }
+  .aboutAbout {
+    padding: 64px 44px;
+    gap: 6%;
+  }
+  .aboutAboutD {
+    width: 47%;
+  }
+  .aboutAboutImg {
+    width: 47%;
+  }
+  .aboutValue {
+    padding: 46px 0 79px 44px;
+  }
+  .aboutValue h2 {
+    padding-bottom: 24px;
+  }
+  #vh4 {
+    padding: 0 10%;
+  }
+  .aboutValueCard {
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/AboutUs/aboutUs.style.css
     width: 360px;
     height: 180px;
     border-radius: 10px;
     padding: 24px 19px 24px 16px;
   }
+<<<<<<< HEAD:Frontend/src/pages/AboutUs/aboutUs.style.css
   #aboutUs .aboutValueCardD {
+=======
+  .aboutValueCardD {
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/AboutUs/aboutUs.style.css
     display: flex;
     gap: 16px;
     bottom: 24px;
   }
+<<<<<<< HEAD:Frontend/src/pages/AboutUs/aboutUs.style.css
   #aboutUs .aboutValueS {
     gap: 28px;
   }
@@ -316,16 +574,61 @@
     width: 100%;
   }
   #aboutUs .aboutFooter {
+=======
+  .aboutValueS {
+    gap: 28px;
+  }
+  .aboutValueCardD img {
+    height: 50px;
+    width: 50px;
+  }
+  #v2h4 {
+    padding-bottom: 6px;
+  }
+  .aboutService {
+    padding: 51px 44px 41px;
+  }
+  .aboutServiceS {
+    padding: 33px 0 59px;
+  }
+  .aboutServiceCard img {
+    height: 50px;
+    width: 50px;
+  }
+  .aboutServiceCardT h5 {
+    padding-top: 6px;
+  }
+  .aboutGallery {
+    padding: 50px 44px 41px;
+    margin-bottom: 51px;
+  }
+  .aboutGallery h3 {
+    padding-bottom: 12px;
+  }
+  .aboutGalleryS {
+    padding-top: 44px;
+    gap: 36px;
+  }
+  .aboutGalleryS img {
+    width: 100%;
+  }
+  .aboutFooter {
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/AboutUs/aboutUs.style.css
     height: 834px;
   }
 }
 @media screen and (max-width: 800px) {
+<<<<<<< HEAD:Frontend/src/pages/AboutUs/aboutUs.style.css
   #aboutUs .aboutHeroR img {
+=======
+  .aboutHeroR img {
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/AboutUs/aboutUs.style.css
     height: 380px;
     width: 340px;
   }
 }
 @media screen and (max-width: 700px) {
+<<<<<<< HEAD:Frontend/src/pages/AboutUs/aboutUs.style.css
   #aboutUs .aboutHeroR img {
     height: 380px;
     width: 300px;
@@ -357,11 +660,51 @@
     line-height: 12px;
   }
   #aboutUs .btn {
+=======
+  .aboutHeroR img {
+    height: 380px;
+    width: 300px;
+  }
+}
+.aboutServiceS {
+  gap: 16px;
+}
+
+.aboutServiceCard {
+  gap: 12px;
+  padding: 12px;
+}
+
+@media screen and (max-width: 600px) {
+  h1,
+h2 {
+    font-size: 18px;
+    line-height: 21px;
+  }
+  h3 {
+    font-weight: 700;
+    line-height: 23px;
+  }
+  h4 {
+    font-size: 12px;
+    line-height: 14px;
+  }
+  h5 {
+    font-size: 11px;
+    line-height: 13px;
+  }
+  h6 {
+    font-size: 10px;
+    line-height: 12px;
+  }
+  .btn {
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/AboutUs/aboutUs.style.css
     width: 110px;
     padding: 14px 20px;
     font-size: 16px;
     line-height: 19px;
   }
+<<<<<<< HEAD:Frontend/src/pages/AboutUs/aboutUs.style.css
   #aboutUs .stroke {
     width: 50px;
   }
@@ -399,24 +742,75 @@
     padding-bottom: 16px;
   }
   #aboutUs #vh4 {
+=======
+  .stroke {
+    width: 50px;
+  }
+  .aboutNav {
+    height: 64px;
+  }
+  .aboutHero {
+    padding: 0 24px;
+  }
+  .aboutHeroL {
+    padding: 24px 0 50px;
+  }
+  .aboutHeroR img {
+    height: 320px;
+    width: 240px;
+  }
+  .aboutAbout {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+  .aboutAboutD {
+    width: 100%;
+    align-items: center;
+  }
+  .aboutAboutImg {
+    width: 100%;
+    height: 100%;
+  }
+  .aboutValue {
+    padding: 24px 0 40px 24px;
+  }
+  .aboutValue h2 {
+    padding-bottom: 16px;
+  }
+  #vh4 {
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/AboutUs/aboutUs.style.css
     padding: 0 5%;
     font-size: 14px;
     line-height: 16px;
   }
+<<<<<<< HEAD:Frontend/src/pages/AboutUs/aboutUs.style.css
   #aboutUs .aboutValueS {
     gap: 24px;
     padding-top: 35px;
   }
   #aboutUs .aboutValueCard {
+=======
+  .aboutValueS {
+    gap: 24px;
+    padding-top: 35px;
+  }
+  .aboutValueCard {
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/AboutUs/aboutUs.style.css
     width: 180px;
     height: 128px;
     padding: 16px 10px 13px;
   }
+<<<<<<< HEAD:Frontend/src/pages/AboutUs/aboutUs.style.css
   #aboutUs #v1h4 {
+=======
+  #v1h4 {
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/AboutUs/aboutUs.style.css
     padding-bottom: 24px;
     font-size: 10px;
     line-height: 12px;
   }
+<<<<<<< HEAD:Frontend/src/pages/AboutUs/aboutUs.style.css
   #aboutUs .aboutValueCardD {
     gap: 5px;
   }
@@ -452,25 +846,75 @@
     padding-bottom: 21px;
   }
   #aboutUs .aboutGalleryS {
+=======
+  .aboutValueCardD {
+    gap: 5px;
+  }
+  .aboutValueCardD img {
+    height: 30px;
+    width: 30px;
+  }
+  #v2h4 {
+    padding-bottom: 1px;
+  }
+  .aboutService {
+    padding: 10px 24px 36px;
+  }
+  .aboutService h3 {
+    padding: 16px 0 13px;
+  }
+  .aboutServiceS {
+    padding: 34px 0;
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+  .aboutServiceCardT h4 {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .aboutServiceCardT h5 {
+    padding-top: 6px;
+  }
+  .aboutGallery {
+    padding: 30px 24px 40px;
+    margin-bottom: 23px;
+  }
+  .aboutGallery h3 {
+    padding-bottom: 21px;
+  }
+  .aboutGalleryS {
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/AboutUs/aboutUs.style.css
     padding-top: 49px;
     gap: 20px;
     grid-template-columns: 1fr 1fr;
   }
+<<<<<<< HEAD:Frontend/src/pages/AboutUs/aboutUs.style.css
   #aboutUs .aboutFooter {
+=======
+  .aboutFooter {
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/AboutUs/aboutUs.style.css
     height: 1785px;
   }
 }
 @media screen and (max-width: 480px) {
+<<<<<<< HEAD:Frontend/src/pages/AboutUs/aboutUs.style.css
   #aboutUs .aboutHeroL {
     width: 50%;
     padding: 24px 0 120px;
   }
   #aboutUs .aboutHeroR img {
+=======
+  .aboutHeroL {
+    width: 50%;
+  }
+  .aboutHeroR img {
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/AboutUs/aboutUs.style.css
     height: 280px;
     width: 180px;
   }
 }
 @media screen and (max-width: 380px) {
+<<<<<<< HEAD:Frontend/src/pages/AboutUs/aboutUs.style.css
   #aboutUs .aboutHeroL {
     width: 45%;
     padding: 24px 0 60px;
@@ -480,3 +924,13 @@
     width: 160px;
   }
 }
+=======
+  .aboutHeroL {
+    width: 45%;
+  }
+  .aboutHeroR img {
+    height: 240px;
+    width: 160px;
+  }
+}/*# sourceMappingURL=aboutUs.style.css.map */
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/AboutUs/aboutUs.style.css

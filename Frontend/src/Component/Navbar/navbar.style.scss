@@ -1,7 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Sora:wght@600&family=Work+Sans:wght@400;500&display=swap");
 
+<<<<<<< HEAD:Frontend/src/Component/Navbar/navbar.style.scss
 .navbar {
   margin-bottom: 1.5rem;
+=======
+h2,
+h3,
+p {
+  margin: 0;
+  font-family: "Work Sans", sans-serif;
+}
+.navbar {    
+  margin-bottom: 4rem;
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/Navbar/navbar.style.scss
   text-align: start;
   position: relative;
   background: #fff;

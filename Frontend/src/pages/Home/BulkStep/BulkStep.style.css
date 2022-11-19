@@ -1,4 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;700&family=Work+Sans:wght@400;500;700&display=swap");
+<<<<<<< HEAD:Frontend/src/pages/Home/BulkStep/BulkStep.style.css
+=======
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 100%;
+  color: #222222;
+}
+
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/BulkStep/BulkStep.style.css
 .flex {
   display: flex;
 }
@@ -95,4 +109,8 @@
   .bulk-button {
     margin: 60px 0 32px 0;
   }
+<<<<<<< HEAD:Frontend/src/pages/Home/BulkStep/BulkStep.style.css
 }
+=======
+}/*# sourceMappingURL=BulkStep.style.css.map */
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/BulkStep/BulkStep.style.css

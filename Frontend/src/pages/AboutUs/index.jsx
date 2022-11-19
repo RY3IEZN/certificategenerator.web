@@ -24,7 +24,15 @@ import Gallery6 from '../../assets/gallery6.png'
 
 const aboutUs = () => {
   return (
+<<<<<<< HEAD:Frontend/src/pages/AboutUs/index.jsx
     <div id="aboutUs" className="about">     
+=======
+    <div id="aboutUs" className="about">
+      <div className="aboutNav">
+        nav
+      </div>
+      
+>>>>>>> 00810070 (fix: fixed general styling):src/Component/AboutUs/index.jsx
       <div className="aboutHero">
         <div className="aboutHeroL">
           <h1>We are a team of Creators and Innovators </h1>
