@@ -1,5 +1,10 @@
 import React from "react";
-
+import linkedin from './assets/linkedin.png'
+import twitter from './assets/twitter.png'
+import github from './assets/github.png'
+import intagra from './assets/instagra.png'
+import under_construction from './assets/under_construction.png'
+import arrowRight from './assets/arrowRight.PNG'
 
 
 function Comingsoon(){
@@ -11,7 +16,7 @@ function Comingsoon(){
                 <div id="welcome">
                     <div id="welcomeHead">
                         <div id="back">
-                            <img src="images/arrowRight.PNG" id="arrow" alt=""></img>
+                            <img src={arrowRight} id="arrow" alt=""></img>
                              Back to Home
                         </div>
                         <div id="f1">Coming Soon!</div>
@@ -22,7 +27,7 @@ function Comingsoon(){
                         </div>
                     </div>
                     <div id="construction">
-                        <img src="images/under_construction.png" id="cons_img" alt=""></img>
+                    <img src={under_construction} id="cons_img" alt=""></img>
                         
                     </div>
                 </div>
@@ -39,10 +44,10 @@ function Comingsoon(){
                         <div id="social">    
                             <div id="socail_des">We are social</div>
                             <div id="socail_logo">
-                                <img src="images/instagra.png" alt=""></img>
-                                <img src="images/Linkedin.png" alt=""></img>
-                                <img src="images/twitter.png" alt=""></img>
-                                <img src="images/github.png" alt=""></img>
+                                <img src={intagra} alt=""></img>
+                                <img src={linkedin} alt=""></img>
+                                <img src={twitter} alt=""></img>
+                                <img src={github} alt=""></img>
                             </div>
                         </div>
                         <ul>
