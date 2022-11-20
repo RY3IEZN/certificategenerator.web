@@ -59,7 +59,7 @@
     line-height: 81px;
     letter-spacing: -0.5px;
     color: #000000;
-    margin-left: 0;
+    margin-top: 20px;
     height: 81px;
     text-align: left;
 }
@@ -73,6 +73,7 @@
     letter-spacing: -0.5px;
     color: #000000;
     text-align: left;
+    margin-top: 10px;
 }
 #formdat{
     display: flex;
@@ -117,6 +118,7 @@
 form{
     display: flex;
     width: 100%;
+    gap: 20px;
 }
 #spam {
     font-family: "Work Sans";
@@ -203,9 +205,8 @@ footer>ul{
 @media screen and (max-width:480px){ 
     #cons_img, #items>ul,#formdat, footer{display: flex;}  
     #cons_img {width: 300px;}
-    #welcome,footer{flex-direction: column;}
+    #welcome,footer{flex-direction: column; justify-content: center; align-items: center;}
     #f1{font-size: 24px; width: 150px;}
     #p{font-size: 14px;}
     #email{width: 200px;}
-    footer>ul{width: 60%;}
-  }
+    footer>ul{width: 60%;}   }

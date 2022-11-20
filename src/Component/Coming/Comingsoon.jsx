@@ -1,18 +1,18 @@
 import React from "react";
-import Navbar from "../Navbar";
+
 
 
 function Comingsoon(){
     return(
         <div id="container">
              
-                <Navbar />
+                
             <div id="main">
                 <div id="welcome">
                     <div id="welcomeHead">
                         <div id="back">
                             <img src="images/arrowRight.PNG" id="arrow" alt=""></img>
-                            Back to Home
+                             Back to Home
                         </div>
                         <div id="f1">Coming Soon!</div>
                         <div id="p">
@@ -23,6 +23,7 @@ function Comingsoon(){
                     </div>
                     <div id="construction">
                         <img src="images/under_construction.png" id="cons_img" alt=""></img>
+                        
                     </div>
                 </div>
                 <div id="formdat">

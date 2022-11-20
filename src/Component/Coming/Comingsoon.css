@@ -60,7 +60,7 @@
   line-height: 81px;
   letter-spacing: -0.5px;
   color: #000000;
-  margin-left: 0;
+  margin-top: 20px;
   height: 81px;
   text-align: left;
 }
@@ -75,6 +75,7 @@
   letter-spacing: -0.5px;
   color: #000000;
   text-align: left;
+  margin-top: 10px;
 }
 
 #formdat {
@@ -122,6 +123,7 @@
 form {
   display: flex;
   width: 100%;
+  gap: 20px;
 }
 
 #spam {
@@ -245,6 +247,8 @@ footer > ul {
   }
   #welcome, footer {
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   #f1 {
     font-size: 24px;
