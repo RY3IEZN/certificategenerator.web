@@ -32,7 +32,7 @@ workflows:
     jobs:
       - run_tests
       - docker/publish:
-          -image: codak77/cicd
+          image: codak77/cicd
           auth:
             username: mydockerhub-user
             password: $DOCKERHUB_PASSWORD
