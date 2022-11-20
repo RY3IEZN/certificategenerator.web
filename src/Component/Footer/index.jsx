@@ -25,7 +25,7 @@ const Footer = () => {
     }
   };
   return (
-    <div className="footer">
+    <div id="footerId" className="footer">
       <div className="footer-container">
         <div className="footer-flex">
           <div className="footer-lists">
