@@ -20,6 +20,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+<<<<<<< HEAD
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -37,5 +38,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+=======
+  "dependencies": {
+    "bootstrap": "^5.2.2",
+    "eslint": "^8.28.0",
+    "eslint-plugin-react": "^7.31.11",
+    "lint-staged": "^13.0.3",
+    "react-bootstrap": "^2.6.0"
+>>>>>>> bd3ed1adc0c6251e851d287d092e039029050e20
   }
 }
