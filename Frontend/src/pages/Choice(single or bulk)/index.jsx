@@ -3,7 +3,7 @@ import "./choice.style.scss";
 import React from "react";
 
 // img
-UploadIcon from "../../assets/img/upload.svg";
+import UploadIcon from "../../assets/img/upload.svg";
 import Info from "../../assets/img/info.svg";
 // componenet
 import Upload from "./Upload";
