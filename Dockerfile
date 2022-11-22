@@ -1,19 +1,16 @@
 FROM node:16
-
-# Create app directory
 WORKDIR /app
-
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
-COPY package*.json ./
-
+COPY package*.json /app
+COPY ./controllers /app/controllers
+COPY ./middleware /app/middleware
+COPY ./models /app/models
+COPY ./routes /app/routes
+COPY ./utils /app/utils
+COPY index.js /app
 RUN npm install
-# If you are building your code for production
-# RUN npm ci --only=production
-
-# Bundle app source
-COPY . .
+COPY ./frontend /app/frontend
+WORKDIR /app/frontend
+RUN npm install
 
 EXPOSE 3000
-CMD [ "node", "index.js" ]
+CMD [ "npm", "start" ]
