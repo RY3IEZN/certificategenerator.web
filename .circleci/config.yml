@@ -12,9 +12,7 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: Node Install
-          command: |
-            npm cache clear --force
-            sudo npm install
+          command: sudo npm install
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
