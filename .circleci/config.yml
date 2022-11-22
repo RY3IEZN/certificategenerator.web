@@ -8,13 +8,14 @@ jobs:
     steps:
       - checkout # pulls code from github repo
       - setup_remote_docker
+      - run: sudo npm install -g
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: Node Install
           command: |
             npm cache clear --force
-            npm install
+            sudo npm install
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
