@@ -1,6 +1,7 @@
 FROM node:16
 WORKDIR /app
 COPY package*.json /app/
+COPY *.env /app/
 COPY ./controllers /app/controllers/
 COPY ./middleware /app/middleware/
 COPY ./models /app/models/
