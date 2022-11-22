@@ -12,7 +12,11 @@ jobs:
       - checkout
       - run:
           name: update-npm
+<<<<<<< HEAD
           command: 'sudo npm install -g'
+=======
+          command: "sudo npm install -g"
+>>>>>>> 0fea13f8b37944fa7d461ff13c5a60a51e578235
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
@@ -39,4 +43,8 @@ workflows:
           filters:
             branches:
               only:
+<<<<<<< HEAD
                 - main
+=======
+                - dev
+>>>>>>> 0fea13f8b37944fa7d461ff13c5a60a51e578235

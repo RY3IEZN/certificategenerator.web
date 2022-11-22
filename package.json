@@ -7,6 +7,10 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "react": "^18.2.0",
+<<<<<<< HEAD
+=======
+    "react-bootstrap": "^2.6.0",
+>>>>>>> 0fea13f8b37944fa7d461ff13c5a60a51e578235
     "react-dom": "^18.2.0",
     "react-icons": "^4.6.0",
     "react-router-dom": "^6.4.3",
@@ -19,6 +23,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+<<<<<<< HEAD
   },
 <<<<<<< HEAD
   "eslintConfig": {
@@ -27,6 +32,15 @@
       "react-app/jest"
     ]
   },
+=======
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+>>>>>>> 0fea13f8b37944fa7d461ff13c5a60a51e578235
   "browserslist": {
     "production": [
       ">0.2%",
@@ -38,6 +52,7 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+<<<<<<< HEAD
 =======
   "dependencies": {
     "bootstrap": "^5.2.2",
@@ -46,5 +61,7 @@
     "lint-staged": "^13.0.3",
     "react-bootstrap": "^2.6.0"
 >>>>>>> bd3ed1adc0c6251e851d287d092e039029050e20
+=======
+>>>>>>> 0fea13f8b37944fa7d461ff13c5a60a51e578235
   }
 }
