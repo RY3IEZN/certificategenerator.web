@@ -2,6 +2,7 @@ version: 2.1
 
 jobs:
   build:
+    working_directory: ~/node-app
     docker:
       - image: circleci/node:10.16.3
       - image: docker:17.09.1-ce-git
