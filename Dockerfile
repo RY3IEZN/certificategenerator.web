@@ -1,21 +1,16 @@
 FROM node:16-alpine AS builder
 
 ENV NODE_ENV production
-# Add a work directory
 WORKDIR /app
 
-# Copy app files
-COPY . /app/
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY package*.json ./
 
-# Cache and Install dependencies
-COPY package.json .
-COPY package-lock.json .
+COPY package*.json ./app/frontend
 
 RUN npm install
-RUN npm install react-scripts@5.0.1 -g
-
-# Build the app
-RUN npm run build
 
 # Bundle static assets with nginx
 FROM nginx:1.21.0-alpine as production
