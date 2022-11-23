@@ -10,16 +10,16 @@ jobs:
       - setup_remote_docker
       - run: sudo npm i npm@7.24.0
       - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+          key: dependency-cache-{{ checksum "package.json" }} && dependency-cache-{{ checksum "/frontend/package.json" }}
       - run:
           name: Node Install
           command: |
             npm cache clear --force
             sudo npm install
       - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+          key: dependency-cache-{{ checksum "package.json" }} dependency-cache-{{ checksum "/frontend/package.json" }}
           paths:
-            - ./node_modules
+            - ./node_modules && ./frontend/node_modules
       # - run: npm run test
       # build the docker image on success
       - run:
