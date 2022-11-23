@@ -1,17 +1,37 @@
-FROM node:16
-WORKDIR /app
-COPY package*.json /app/
-COPY *.env /app/
-COPY ./controllers /app/controllers/
-COPY ./middleware /app/middleware/
-COPY ./models /app/models/
-COPY ./routes /app/routes/
-COPY ./utils /app/utils/
-COPY index.js /app/
-RUN npm install
-COPY ./frontend /app/frontend/
-WORKDIR /app/frontend
-RUN npm install
+FROM node:16-alpine AS builder
 
-EXPOSE 3000
-CMD [ "npm", "start" ]
+ENV NODE_ENV production
+# Add a work directory
+WORKDIR /app
+
+# Copy app files
+COPY . /app/
+
+# Cache and Install dependencies
+COPY package.json .
+COPY package-lock.json .
+
+RUN npm install
+RUN npm install react-scripts@5.0.1 -g
+
+# Build the app
+RUN npm run build
+
+# Bundle static assets with nginx
+FROM nginx:1.21.0-alpine as production
+ENV NODE_ENV production
+
+# Copy built assets from builder
+COPY --from=builder /app/build /usr/share/nginx/html
+
+# Remove default conf
+RUN mv /etc/nginx/conf.d/default.conf /etc/nginx/conf.d/confbackup.conf
+
+# Add your nginx.conf
+COPY nginx/nginx.conf /etc/nginx/conf.d
+
+# Expose port
+EXPOSE 80
+
+# Start nginx
+CMD ["nginx", "-g", "daemon off;"] 
