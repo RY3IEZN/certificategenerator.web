@@ -10,9 +10,11 @@ WORKDIR /app
 # where available (npm@5+)
 COPY package*.json ./
 
-COPY package*.json ./app/frontend
+COPY /frontend/package*.json ./app/frontend/
 
 RUN npm install
+
+RUN npm start
 
 # Bundle static assets with nginx
 FROM nginx:1.21.0-alpine as production
