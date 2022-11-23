@@ -1,6 +1,8 @@
 FROM node:16-alpine AS builder
 
 ENV NODE_ENV production
+
+# Create app directory
 WORKDIR /app
 
 # Install app dependencies
