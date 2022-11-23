@@ -15,6 +15,7 @@ jobs:
           name: Node Install
           command: |
             npm cache clear --force
+            sudo chown -R 3434:3434 "/root/.npm"
             sudo npm install
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
