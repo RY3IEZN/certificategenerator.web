@@ -8,7 +8,7 @@ jobs:
     steps:
       - checkout # pulls code from github repo
       - setup_remote_docker
-      - run: sudo npm i npm@7.24.0
+      - run: sudo npm i npm@7.24.0 -g
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }} && dependency-cache-{{ checksum "frontend/package.json" }}
       - run:
