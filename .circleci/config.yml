@@ -41,43 +41,47 @@ jobs:
           command: |
             echo "ERROR building certificategeneratorwebfrontend:frontend"
 
-    build-backend:
-      docker:
-        - image: circleci/node:16.10.0
-        - image: docker:17.09.1-ce-git
-      steps:
-        - checkout # pulls code from github repo
-        - setup_remote_docker
-        - run: sudo npm install -g
-        - restore_cache:
+  build-backend:
+    docker:
+      - image: circleci/node:16.10.0
+      - image: docker:17.09.1-ce-git
+    steps:
+      - checkout # pulls code from github repo
+      - setup_remote_docker
+      - run: sudo npm install -g
+      - restore_cache:
             key: dependency-cache-{{ checksum "./backend/package.json" }}
-        - run:
-            name: Node Install
-            command: |
-              npm cache clear --force
-              sudo npm install
-        - save_cache:
-            key: dependency-cache-{{ checksum "./backend/package.json" }}
-            paths:
-              - ./backend/node_modules
-        # - run: npm run test
-        - run:
-            name: Docker
-            when: on_success
-            command: |
-              docker --version
-              docker login -u=$DOCKER_LOGIN -p=$DOCKER_PASSWORD
-              docker build -t codak77/certificategeneratorwebbackend:backend --build-arg codak77=certificategeneratorwebbackend-backend .
-              docker push codak77/certificategeneratorwebbackend:backend
-              echo "Docker build made sucessfully!! for certificategeneratorwebbackend:backend
-        - run:
-            name: Build Failure
-            when: on_fail
-            command: |
-              echo "ERROR building certificategeneratorwebbackend:backend
+      - run:
+          name: Node Install
+          command: |
+            npm cache clear --force
+            sudo npm install
+      - save_cache:
+          key: dependency-cache-{{ checksum "./backend/package.json" }}
+          paths:
+            - ./backend/node_modules
+      # - run: npm run test
+      - run:
+          name: Docker
+          when: on_success
+          command: |
+            docker --version
+            docker login -u=$DOCKER_LOGIN -p=$DOCKER_PASSWORD
+            docker build -t codak77/certificategeneratorwebbackend:backend --build-arg codak77=certificategeneratorwebbackend-backend .
+            docker push codak77/certificategeneratorwebbackend:backend
+            echo "Docker build made sucessfully!! for certificategeneratorwebbackend:backend
+      - run:
+          name: Build Failure
+          when: on_fail
+          command: |
+            echo "ERROR building certificategeneratorwebbackend:backend
 
 workflows:
   default:
     jobs:
-      - build-frontend
-      - build-backend
+      - build-frontend:
+          build-backend:
+          branches:  
+            only:  
+              - dev
+              - staging
