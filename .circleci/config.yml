@@ -66,6 +66,7 @@ jobs:
           paths:
             - ./backend/node_modules
       # - run: npm run test
+      # - run: npm run test
       - run:
           name: Docker
           when: on_success
