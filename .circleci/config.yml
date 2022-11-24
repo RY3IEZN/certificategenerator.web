@@ -48,17 +48,18 @@ jobs:
     steps:
       - checkout # pulls code from github repo
       - setup_remote_docker
-      # - run:
-      #     name: update packages
-      #     command: |
-      #       cd backend
-      #       sudo npm install -g
+      - run:
+          name: update packages
+          command: |
+            cd backend
+            sudo npm install -g
       - restore_cache:
             key: dependency-cache-{{ checksum "./backend/package.json" }}
       - run:
           name: Node Install
           command: |
             cd backend
+            npm cache clear --force
             sudo npm install
       - save_cache:
           key: dependency-cache-{{ checksum "./backend/package.json" }}
@@ -74,7 +75,7 @@ jobs:
             docker login -u=$DOCKER_LOGIN -p=$DOCKER_PASSWORD
             docker build -t codak77/certificategeneratorwebbackend:backend --build-arg codak77=certificategeneratorwebbackend-backend .
             docker push codak77/certificategeneratorwebbackend:backend
-            echo "Docker build made sucessfully!! for certificategeneratorwebbackend:backend
+            echo "Docker build made sucessfully!! for certificategeneratorwebbackend:backend"
       - run:
           name: Build Failure
           when: on_fail
