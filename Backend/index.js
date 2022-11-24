@@ -4,12 +4,14 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors')
+const dotenv = require("dotenv");
+
 const fileUpload = require('express-fileupload');
 
 const app = express();
 
-//import coustom middlware
-const connectDB = require("./utils/dbConn");
+//import custom middleware
+//const connectDB = require("./utils/dbConn");
 
 //import custom routes
 const auth = require("./routes/authRouter");
@@ -22,12 +24,26 @@ const mailingLists = require("./routes/mailingListRouter");
 const profileRouter = require("./routes/profileRouters");
 const contacts = require('./routes/contactRouter');
 const pricing = require('./routes/pricingRouter');
+const teamRoute = require("./routes/teamRoute");
 const swaggerUi = require('swagger-ui-express')
+dotenv.config({ path: "./config.env" });
 const swaggerFile = require('./swagger_output.json')
+const router = require("./routes/teamRoute");
 
 const PORT = process.env.PORT || 5000;
 
-connectDB();
+const DB = process.env.DATABASE;
+mongoose.set("useCreateIndex", true);
+
+mongoose
+  .connect(process.env.DATABASE_LOCAL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+  })
+  .then((con) => {
+    console.log("Connection successful");
+  });
 
 //middleware
 app.use(cors());
@@ -54,8 +70,9 @@ app.use('/api/pricing', pricing)
 app.use("/api/profile/", profileRouter);
 app.use('/api/contactus', contacts)
 app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerFile))
+app.use("/api/team", teamRoute);
 
-mongoose.connection.once("open", () => {
-  console.log("Connected to DB");
-  app.listen(PORT, () => console.log(`server running on port ${PORT}`));
+
+app.listen(PORT, () => {
+  console.log(`connected to backend - ${PORT}`);
 });
