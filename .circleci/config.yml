@@ -79,9 +79,5 @@ jobs:
 workflows:
   default:
     jobs:
-      - build-frontend:
-          build-backend:
-            branches:  
-              only:  
-                - dev
-                - staging
+      - build-frontend
+      - build-backend
