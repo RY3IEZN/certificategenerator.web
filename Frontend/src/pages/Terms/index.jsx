@@ -9,8 +9,8 @@ const Terms = () => {
 
         {/* Header */}
         <div className='header'>
-            <h1>Certawi Terms of Service</h1>
-            <p>Last updated: November 17, 2022</p>
+            <h1>Certify Terms of Service</h1>
+            <p>Shall apply from November 23, 2022.</p>
         </div>
 
         {/* Table Of Content */}
@@ -49,7 +49,7 @@ const Terms = () => {
                         <li key={name}>{name}</li>
                         )}
                         <li style={{listStyleType: 'disc', margin: 0, marginTop: -20}}>at least one active e-mail account;</li>
-                        <li> It is also necessary to enable cookies and JavaScript in the browser.</li>
+                        <li style={{listStyleType: 'disc', margin: 0, marginTop: -20}}> It is also necessary to enable cookies and JavaScript in the browser.</li>
                     </ul>
                 </li>
                 <li id='use_of_service'>    
@@ -58,6 +58,7 @@ const Terms = () => {
                        {useOfService.map(({name}) => 
                         <li key={name}>{name}</li>
                         )}
+                        <li>use the Service in accordance with good manners, principles of social coexistence and principles resulting from the provisions of the Privacy Policy.</li>
                         <li style={{margin: 0, marginLeft: -20, marginBottom: -10}}>Furthermore, the Customer agrees:</li>
                         {otherUseOfService.map(({name}) => 
                         <li style={{listStyleType: 'disc', margin: 0}}>{name}</li>
