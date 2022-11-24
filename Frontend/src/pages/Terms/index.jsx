@@ -48,8 +48,8 @@ const Terms = () => {
                        {technicalRequirements.map(({name}) => 
                         <li key={name}>{name}</li>
                         )}
-                        <li style={{listStyleType: 'disc', margin: 0, marginTop: -20}}>at least one active e-mail account;</li>
-                        <li style={{listStyleType: 'disc', margin: 0, marginTop: -20}}> It is also necessary to enable cookies and JavaScript in the browser.</li>
+                        <li style={{listStyleType: 'disc', margin: 0, marginTop: 10}}>at least one active e-mail account;</li>
+                        <li style={{listStyleType: 'disc', margin: 0, marginTop: 10}}> It is also necessary to enable cookies and JavaScript in the browser.</li>
                     </ul>
                 </li>
                 <li id='use_of_service'>    
@@ -59,9 +59,9 @@ const Terms = () => {
                         <li key={name}>{name}</li>
                         )}
                         <li>use the Service in accordance with good manners, principles of social coexistence and principles resulting from the provisions of the Privacy Policy.</li>
-                        <li style={{margin: 0, marginLeft: -20, marginBottom: -10}}>Furthermore, the Customer agrees:</li>
+                        <li style={{margin: 0, marginLeft: -20, marginBottom: 10}}>Furthermore, the Customer agrees:</li>
                         {otherUseOfService.map(({name}) => 
-                        <li style={{listStyleType: 'disc', margin: 0}}>{name}</li>
+                        <li style={{listStyleType: 'disc', margin: 5}}>{name}</li>
                         )}
                         <li>He also declares that he uses the Service directly for purposes related to his professional or business activity.</li>
                     </ul>
