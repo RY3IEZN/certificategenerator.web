@@ -1,3 +1,5 @@
+FROM node:16.18.1 as builder-step
+
 WORKDIR /frontend
 
 COPY package*.json /frontend/
