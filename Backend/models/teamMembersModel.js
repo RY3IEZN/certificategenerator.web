@@ -1,5 +1,5 @@
-/* eslint-disable linebreak-style */
-const { Schema, model } = require("mongoose");
+const mongoose = require("mongoose");
+const { Schema } = mongoose;
 
 const memberSchema = new Schema(
   {
@@ -31,6 +31,4 @@ const memberSchema = new Schema(
   }
 );
 
-const Member = model("Member", memberSchema);
-
-module.exports = Member;
+module.exports = model("Member", memberSchema);
