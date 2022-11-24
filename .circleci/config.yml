@@ -48,24 +48,22 @@ jobs:
     steps:
       - checkout # pulls code from github repo
       - setup_remote_docker
-      - run:
-          name: update packages
-          command: |
-            cd backend
-            sudo npm install -g
+      # - run:
+      #     name: update packages
+      #     command: |
+      #       cd backend
+      #       sudo npm install -g
       - restore_cache:
             key: dependency-cache-{{ checksum "./backend/package.json" }}
       - run:
           name: Node Install
           command: |
             cd backend
-            npm cache clear --force
             sudo npm install
       - save_cache:
           key: dependency-cache-{{ checksum "./backend/package.json" }}
           paths:
             - ./backend/node_modules
-      # - run: npm run test
       # - run: npm run test
       - run:
           name: Docker
