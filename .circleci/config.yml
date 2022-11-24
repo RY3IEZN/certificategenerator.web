@@ -80,7 +80,7 @@ jobs:
           name: Build Failure
           when: on_fail
           command: |
-            echo "ERROR building certificategeneratorwebbackend:backend
+            echo "ERROR building certificategeneratorwebbackend:backend"
 
 workflows:
   default:
