@@ -1,12 +1,14 @@
-@import "../../../Style/variables";
-@import "../dashboard.style.scss";
+@use "../../../Style/variables" as *;
+@use "../dashboard.style.scss" as *;
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap");
 
 .card {
-    padding: 1rem;
+    padding: 1.5rem 1rem;
     border-radius: 12px;
+    text-align: start;
     p {
-      margin-bottom: 1rem;
+      margin: 0;
+      margin-bottom: 1.5rem;
       font-weight: 500;
       line-height: 1.5rem;
       font-size: $size-sm;
@@ -16,8 +18,8 @@
       display: flex;
       align-items: center;
       gap: 1rem;
-      .icon {
-        background-color: $primaryGreenColor;
+      .icon-dash {
+        background-color: $primaryColor;
         display: flex;
         width: 40px;
         height: 40px;
