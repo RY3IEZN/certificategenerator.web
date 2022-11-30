@@ -19,7 +19,7 @@ export default function Hero () {
                     <span className="emphasized"> free</span>
                   </p>
                   <p className="work-sans line-height hero-caption">Generate professionally designed certificates for your staff, students etc.</p>
-                  <button className="hero-button">Create a certificate now</button>
+                  <button className="hero-button">Create certificate</button>
                </div>
                <img src={hero} alt='hero' className="hero-img"></img>
            </div>
