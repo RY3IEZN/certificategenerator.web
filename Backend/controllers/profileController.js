@@ -1,16 +1,46 @@
-
-
 const Profile = require("../models/profileModel");
 const jwt = require("jsonwebtoken");
+const multer = require('multer');
 
-const addUserProfile = async (req, res, next) => {
+
+
+const FILE_TYPE_MAP = {
+  'image/png': 'png',
+  'image/jpeg': 'jpeg',
+  'image/jpg': 'jpg'
+}
+
+
+const storage = multer.diskStorage({
+  destination: function( req,  file, cb){
+      const isValid = FILE_TYPE_MAP[file.mimetype];
+      let uploadError = new Error('invalid image type');
+      if(isValid) {
+          uploadError = null
+      }
+      cb(uploadError, 'public/uploads')
+  },
+  filename: function (req, file, cb){
+      const fileName = file.originalname.split(' ').join('-')
+      const extension = FILE_TYPE_MAP[file.mimetype];
+      cb(null, `${fileName}-${Date.now()}.${extension}`)
+  }
+})
+const uploadOptions = multer({ storage: storage})
+
+
+
+
+
+const addUserProfile =   async (req, res, next) => {
   const auth = req.headers.authorization;
   const payload = req.body;
   if (!payload) return res.status(400).json({ error: "Bad request" });
   if (!auth) {
     return res.status(403).json({ error: "No credentials sent!" });
   }
-
+const filename = req.body.filename
+const basepath = `${req.protocol}://${req.get('host')}/public/upload/`;
   const token = auth.split(" ")[1];
   const { userId } = jwt.decode(token);
 
@@ -21,6 +51,7 @@ const addUserProfile = async (req, res, next) => {
     userProfile = await Profile.create({
       user: userId,
       name: payload.name,
+      brandKit: `payload.${basepath}${filename}`,
       job: payload.job,
       location: payload.location,
       email: payload.email,
@@ -80,4 +111,5 @@ module.exports = {
   addUserProfile,
   getUserProfile,
   updateUserProfile,
+  uploadOptions,
 };
