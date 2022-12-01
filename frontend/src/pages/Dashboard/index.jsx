@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./dashboard.style.scss";
 import profilePic from "../../assets/images/Ellipse4.png";
 import Card from "./Card";
-import { cardData, nullDataIcon, actionIcon } from "./utils";
+import { cardData, nullDataIcon, ActionIcon } from "./utils";
 
 const Dashboard = () => {
   const [data, setData] = useState([]);
@@ -118,7 +118,7 @@ const Dashboard = () => {
                       <td>{item.date}</td>
                       {/* <td>{data.length}</td> */}
                       <td>PDF</td>
-                      <td className="action">{actionIcon()}</td>
+                      <td className="action">{ActionIcon()}</td>
                     </tr>
                   ))}
                 </tbody>
