@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, Navigate, useNavigate} from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   AiOutlineEye,
   AiOutlineEyeInvisible,
@@ -14,8 +14,10 @@ import emailSVG from "./assets/email.svg";
 import keySVG from "./assets/key.svg";
 import { createNewUser } from "../api";
 import Login from "./Login";
+import { signupUser } from "../api";
 
-const Signup = ({ access, setAccess }) => {
+
+const Sginup = ({ access, setAccess }) => {
   const navigate = useNavigate()
   const [type, setType] = useState("password");
   const [formData, setFormData] = React.useState({
@@ -49,7 +51,7 @@ const Signup = ({ access, setAccess }) => {
   }
 
   async function loginUser(email, password) {
-    return fetch("https://certify-api.onrender.com/api/auth/login", {
+    return fetch("https://certify-api.onrender.com/api/auth/sigup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -60,7 +62,7 @@ const Signup = ({ access, setAccess }) => {
    
   const handleSubmit = async e => {
     e.preventDefault();
-    const response = await loginUser(useremail, password);
+    const response = await signupUser(useremail, password);
     const data = await response.json()
     .catch((error) => {
       setError('apiError', {message:error});
@@ -69,41 +71,14 @@ const Signup = ({ access, setAccess }) => {
     const token = data.token;
     setAccess(token);
     {
-      data.token ? navigate("/") : navigate("/login");
+      data.token ? navigate("/") : navigate("/signup");
     
     localStorage.setItem("token", token);
     localStorage.setItem("user", data.userId);
   };
-    
-
-
-
-  // const handleOnSubmit = async (e) => {
-    
-  //   try {
-  //     e.preventDefault();
-  //     const response = await createNewUser({
-  //       password: formData?.password,
-  //       email: formData?.email,
-  //     });
-
-      // if (response && response.data) {
-        //redirect a successfull signup here ...
-        // navigate("/login")
-        // navigate("/")
-    // } catch (error) {
-      // console.log(error);
-    // }
-  // };
-
+ 
   return (
     <div>
-      {/* <div className="logo-container">
-                <div className="logo-div">
-                    <img className="logo" alt="" src={logoSVG}/>
-                    <img className="menu" alt="" src={menuSVG}/>
-                </div>
-            </div> */}
       <div className="authContainer">
         <div className="formDiv">
           <div id="heading">Welcome to Certgo</div>
@@ -121,7 +96,7 @@ const Signup = ({ access, setAccess }) => {
           <div id="hrLine">
             <span id="or">or</span>
           </div>
-          <form>
+          <form onSubmit={handleSubmit}>
             <div id="email">
               <img alt="" src={emailSVG} />
               <input
@@ -187,6 +162,7 @@ const Signup = ({ access, setAccess }) => {
         </div>
       </div>
     </div>
-  );
+   );
 };
-export default Signup;
+
+export default Sginup;

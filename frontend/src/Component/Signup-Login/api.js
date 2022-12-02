@@ -4,10 +4,10 @@ const baseURL="https://certify-api.onrender.com/api/docs/api/auth"
 
 const axiosInstance = axios.create({
   baseURL,
-  headers: { "Content-Type": "application/json" },
+  headers: { "Contsent-Type": "application/json" },
 });
 
-export const createNewUser = (userData) => {
+export const signupUser = (userData) => {
   return axiosInstance.post("/signup", userData);
 };
 export const loginUser = (userData) => {
