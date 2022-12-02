@@ -51,7 +51,7 @@ const Signup = ({ access, setAccess }) => {
   }
 
   async function signupUser(email, password) {
-    return fetch("https://certify-api.onrender.com/api/auth/signup", {
+    return fetch("https://certify-api.onrender.com/api/docs/api/auth/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -73,7 +73,7 @@ const Signup = ({ access, setAccess }) => {
     {
       data.token ? navigate("/") : navigate("/signup");
     }
-    
+
     localStorage.setItem("token", token);
     localStorage.setItem("user", data.userId);
   };
