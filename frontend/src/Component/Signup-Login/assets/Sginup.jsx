@@ -147,7 +147,7 @@ const Sginup = ({ access, setAccess }) => {
               type="submit"
               id="btn"
               value="Create Account"
-              onClick={handleOnSubmit}
+              onClick={handleSubmit}
             />
           </form>
           <p className="haveAccount">
@@ -164,5 +164,5 @@ const Sginup = ({ access, setAccess }) => {
     </div>
    );
 };
-
+}
 export default Sginup;
