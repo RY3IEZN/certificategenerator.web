@@ -15,14 +15,21 @@ import keySVG from "./assets/key.svg";
 import { createNewUser } from "../api";
 import Login from "./Login";
 
-const Signup = () => {
+const Signup = ({ access, setAccess }) => {
   const navigate = useNavigate()
   const [type, setType] = useState("password");
   const [formData, setFormData] = React.useState({
+    name: "",
     password: "",
     email: "",
-    acceptTerms: false,
+    acceptTerms: false
   });
+   
+
+  const [useremail, setUserEmail] = useState();
+  const [password, setPassword] = useState();
+  const [error, setError] = useState();
+  
 
   const handleToggle = () => {
     if (type === "password") {
@@ -33,32 +40,61 @@ const Signup = () => {
   };
   function handleChange(event) {
     const { name, value, type, checked } = event.target;
-    setFormData((prevFormData) => {
+    setFormData(prevFormData => {
       return {
         ...prevFormData,
-        [name]: type === "checkbox" ? checked : value,
+        [name]: type === "checkbox" ? checked : value
       };
     });
   }
 
-  const handleOnSubmit = async (e) => {
-    
-    try {
-      e.preventDefault();
-      const response = await createNewUser({
-        password: formData?.password,
-        email: formData?.email,
-      });
+  async function loginUser(email, password) {
+    return fetch("https://certify-api.onrender.com/api/auth/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ email: email, password: password })
+    })
+  }
+   
+  const handleSubmit = async e => {
+    e.preventDefault();
+    const response = await loginUser(useremail, password);
+    const data = await response.json()
+    .catch((error) => {
+      setError('apiError', {message:error});
+    });
 
-      if (response && response.data) {
+    const token = data.token;
+    setAccess(token);
+    {
+      data.token ? navigate("/") : navigate("/login");
+    
+    localStorage.setItem("token", token);
+    localStorage.setItem("user", data.userId);
+  };
+    
+
+
+
+  // const handleOnSubmit = async (e) => {
+    
+  //   try {
+  //     e.preventDefault();
+  //     const response = await createNewUser({
+  //       password: formData?.password,
+  //       email: formData?.email,
+  //     });
+
+      // if (response && response.data) {
         //redirect a successfull signup here ...
         // navigate("/login")
-        navigate("/")
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+        // navigate("/")
+    // } catch (error) {
+      // console.log(error);
+    // }
+  // };
 
   return (
     <div>
@@ -91,10 +127,11 @@ const Signup = () => {
               <input
                 className="email_input"
                 placeholder=" Email"
-                type="email"
+                type="text"
                 required
                 name="email"
-                onChange={handleChange}
+                value={useremail}
+                onChange={e => setUserEmail(e.target.value)}
               ></input>
             </div>
             <div id="pwd">
@@ -102,10 +139,11 @@ const Signup = () => {
               <input
                 id="input_id"
                 placeholder="Create a password"
-                type={type}
+                type= "text"
                 required
                 name="password"
-                onChange={handleChange}
+                value={password}
+                onChange={e => setPassword(e.target.value)}
               />
               <span onClick={handleToggle}>
                 {type === "text" ? (
@@ -115,6 +153,7 @@ const Signup = () => {
                 )}
               </span>
             </div>
+            {error && <p className="login-error">Invalid Email or Password</p> }
             <div id="checkTerms">
               <input
                 type="checkbox"

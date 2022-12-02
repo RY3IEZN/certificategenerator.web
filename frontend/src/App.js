@@ -40,8 +40,8 @@ function App() {
   const [issueDate, setIssueDate] = useState("");
 
   const [file, setFile] = useState('')
-  const [certificatesData, setCertificateData] = useState([])
-
+  const [certificatesData, setCertificateData] = useState([]);
+  const [access, setAccess] = useState();
   useEffect(() => {
     const uploadFile = () => {
     let myHeaders = new Headers();
@@ -85,7 +85,7 @@ function App() {
               issueDate={issueDate}
               setIssueDate={setIssueDate}
             />} />
-            <Route path="/signup" element={<Signup />} />
+            <Route path="/signup" element={<Signup access = {access} setAccess = {setAccess}/>} />
             <Route path="/login" element={<Login />} />
             <Route path="/comingsoon" element={<ComingSoon />} />
             <Route path="/dashboard" element={<Dashboard />} />

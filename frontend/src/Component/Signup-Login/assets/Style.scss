@@ -6,6 +6,13 @@
     align-items: center;
     gap: 128px;
 }
+.login-error {
+    text-align: left;
+    margin-bottom: 0px;
+    margin-left: 30px;
+    font-size: 17px;
+    color: red;
+  }
 .formDiv{
     display: flex;
     flex-direction: column;
@@ -217,12 +224,22 @@ a{text-decoration: none; color: #222222;}
     #heading{font-size: 43px;}
 }
 @media all and (max-width: 1024px) {
+    .login-error {
+        text-align: left;
+        margin-left: 20px;
+        font-size: 17px;
+      }
     .container{ gap: 60px;  }
     .formDiv{ width: 380px;}
     .emptySpace{ width: 450px; height: 490px; }
     #heading{font-size: 32px;}
 }
 @media all and (max-width: 768px) {
+    .login-error {
+        text-align: center;
+        font-size: 16px;
+        color: red;
+      }
     .formDiv{ width: 400px;}
     .emptySpace{ display: none;}
     #heading{font-size: 38px; font-weight: 600;}
@@ -232,6 +249,11 @@ a{text-decoration: none; color: #222222;}
     .menu{display: block;}
 }
 @media all and(max-width: 480px) {
+    .login-error {
+        text-align: center;
+        color: red !important;
+        font-size: 15px;
+      }
     .formDiv{ width: 327px;}
     #heading{font-size: 23px; line-height: 29px;}
     #startGenerating{margin-bottom: 20px;}
