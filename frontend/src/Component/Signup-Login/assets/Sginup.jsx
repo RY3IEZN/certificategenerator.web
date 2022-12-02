@@ -1,10 +1,10 @@
 import React from "react";
-import { Link, Navigate, useNavigate} from "react-router-dom";
-import { useState, useEffect } from "react";
+import { Link,  useNavigate} from "react-router-dom";
+import { useState } from "react";
 import {
   AiOutlineEye,
   AiOutlineEyeInvisible,
-  AiOutlineUserAdd,
+  // AiOutlineUserAdd,
 } from "react-icons/ai";
 import "./Style.css";
 import appleSVG from "./assets/apple.svg";
@@ -12,12 +12,12 @@ import googleSVG from "./assets/google.svg";
 import cert from "./assets/Cert.png";
 import emailSVG from "./assets/email.svg";
 import keySVG from "./assets/key.svg";
-import { createNewUser } from "../api";
-import Login from "./Login";
+// import { createNewUser } from "../api";
+// import Login from "./Login";
 import { signupUser } from "../api";
 
 
-const Sginup = ({ access, setAccess }) => {
+const Signup = ({ access, setAccess }) => {
   const navigate = useNavigate()
   const [type, setType] = useState("password");
   const [formData, setFormData] = React.useState({
@@ -50,8 +50,8 @@ const Sginup = ({ access, setAccess }) => {
     });
   }
 
-  async function loginUser(email, password) {
-    return fetch("https://certify-api.onrender.com/api/auth/sigup", {
+  async function signupUser(email, password) {
+    return fetch("https://certify-api.onrender.com/api/auth/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -72,6 +72,7 @@ const Sginup = ({ access, setAccess }) => {
     setAccess(token);
     {
       data.token ? navigate("/") : navigate("/signup");
+    }
     
     localStorage.setItem("token", token);
     localStorage.setItem("user", data.userId);
@@ -164,5 +165,4 @@ const Sginup = ({ access, setAccess }) => {
     </div>
    );
 };
-}
-export default Sginup;
+export default Signup;
