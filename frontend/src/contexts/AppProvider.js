@@ -6,7 +6,7 @@ export const AppProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState({});
   const [csvData, setCsvData] = useState([]);
-  const [file, setFile] = useState(null)
+  const [file, setFile] = useState()
 
 
   return (
