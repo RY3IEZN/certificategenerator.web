@@ -9,10 +9,15 @@ import UploadVector from "../../assets/images/uploadPage/uploadVector.svg";
 import Template1 from "../../assets/images/uploadPage/template1.svg";
 import Template2 from "../../assets/images/uploadPage/template2.svg";
 import Template3 from "../../assets/images/uploadPage/template3.svg";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const UploadCSV = ({ setFile }) => {
+import useAppProvider from "../../hooks/useAppProvider";
+import axios from "../../api/axios";
+
+const UploadCSV = () => {
   const [state, setState] = useState({ active: true });
+  const { file, setFile, setCsvData } = useAppProvider();
+  // const postFile = usePostCsvFile()
 
   const toggleState = e => {
     console.log(Object.values(e.target.classList));
@@ -30,9 +35,29 @@ const UploadCSV = ({ setFile }) => {
   };
   let formdata = new FormData();
 
-  function handleUpload(e) {
+  const handleUpload = async (e) => {
     e.preventDefault();
-  }
+    try {
+      const res = await axios.post("/upload/csv", file);
+      console.log(res);
+      setCsvData(res);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  
+  // function handleUpload async () {
+  //   // e.preventDefault();
+  //     try {
+  //       const res = await axios.post("/upload/csv", file);
+  //       console.log(res);
+  //       setCsvData(res);
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   };
+  // }
 
   return (
     <div className="uploadCSVContainer">
@@ -75,7 +100,7 @@ const UploadCSV = ({ setFile }) => {
         </span>
       </div>
       {/* <button className='btn btnLight'>Generate Certificate</button> */}
-      <button style={{ display: "none" }}>Upload</button>
+      <button onClick={handleUpload}>Upload</button>
       <div>
         <h2>Even More Template for You</h2>
         <div className="moreTemplate">
