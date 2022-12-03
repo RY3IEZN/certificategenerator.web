@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;700&family=Work+Sans:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;700&family=Work+Sans:wght@400;500;700&display=swap");
 @import "../../../Style/variables";
 
 * {
@@ -25,11 +25,11 @@ body {
 }
 
 .work-sans {
-  font-family: 'Work sans';
+  font-family: "Work sans";
 }
 
 .sora {
-  font-family: 'Sora';
+  font-family: "Sora";
 }
 
 .line-height {
@@ -37,7 +37,7 @@ body {
 }
 
 .emphasized {
-  color: #19A68E;
+  color: #19a68e;
 }
 
 .text-left {
@@ -80,7 +80,7 @@ body {
   border: none;
   background: none;
   height: 35px;
-  background-color: #19A68E;
+  background-color: #19a68e;
   border-radius: 10px;
   color: #ffffff;
   margin: 2.5%;
@@ -97,7 +97,7 @@ body {
   margin-right: 3%;
 
   .explore-arrow {
-    color: #19A68E;
+    color: #19a68e;
     margin-right: 1%;
   }
 }
@@ -105,12 +105,27 @@ body {
 .cert-form {
   max-width: 1440px;
   width: 80%;
-  background-color: #FAFAFB;
+  background-color: #fafafb;
   margin: 5.5% 10% 12%;
   border: 0.8px solid #545454;
   border-radius: 16px;
   padding: 8%;
   gap: 0;
+}
+
+.bulk-form {
+  width: 80%;
+  height: 622px;
+  margin: 5.5% 10% 12%;
+
+  background: #ffffff;
+
+  border: 0.4px solid rgba(84, 84, 84, 0.6);
+  border-radius: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 label {
@@ -134,7 +149,7 @@ input::-webkit-calendar-picker-indicator {
 .upload {
   font-weight: 500;
   line-height: 19px;
-  border: 1px solid #CCCCCC;
+  border: 1px solid #cccccc;
   border-radius: 4px;
   margin-block: 8px;
   padding: 10.5px 16px;
@@ -145,7 +160,6 @@ input::-webkit-calendar-picker-indicator {
 .label {
   margin: 48px 0 16px 0;
 }
-
 
 .btn-success {
   all: unset;
@@ -163,7 +177,6 @@ input::-webkit-calendar-picker-indicator {
   background-color: #8ab9b2;
   cursor: not-allowed;
 }
-
 
 @media screen and (max-width: 768px) and (min-width: 481px) {
   .header {
@@ -230,7 +243,6 @@ input::-webkit-calendar-picker-indicator {
   input {
     height: 52px;
   }
-
 }
 
 @media screen and (max-width: 768px) and (min-width: 481px) {

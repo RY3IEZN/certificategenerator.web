@@ -41,6 +41,7 @@ const UploadCSV = () => {
   };
 
   const handleUpload = async e => {
+    console.log('i got here')
     e.preventDefault();
     try {
       const res = await axios.post("/upload/csv", formData);
@@ -51,57 +52,29 @@ const UploadCSV = () => {
   };
 
   return (
-    <div className="uploadCSVContainer">
-      <div className="certificateSwitch"></div>
-      <h1>Your certificate is almost ready!</h1>
-      <div className="certificatePreview">
-        <img src={Certificate} alt="certificate preview" />
-      </div>
-      <h2>Upload your csv file here in the format below</h2>
-      <div className="CSVSample">
-        <img src={CSVSample} alt="CSV sample" />
-      </div>
-
-      <div
-        className="dragBox"
-        //   onDragEnter={handleDrag}
-        //   onDragLeave={handleDrag}
-        //   onDragOver={handleDrag}
-        //   onDrop={handleDrop}
-      >
-        <i>
-          <img src={UploadVector} alt="upload icon" />
-        </i>
-        <span>
-          Drag and drop your CSV file here
-          <br /> or
-          <label htmlFor="uploadCSV" className="fileUpload CSVupload">
-            <input
-              type="file"
-              id="uploadCSV"
-              name="uploadCSV"
-              accept=".csv"
-              className="box"
-              onChange={onFileChange}
-            />
-            Browse files
-          </label>
-        </span>
-      </div>
-      {/* <button className='btn btnLight'>Generate Certificate</button> */}
-      <button onClick={handleUpload}>Upload</button>
+    <article id="uploadCSVContainer">
+      <h6>Upload your CSV file here in the format below</h6>
       <div>
-        <h2>Even More Template for You</h2>
-        <div className="moreTemplate">
-          <img src={Template1} alt="Template1" />
-          <img src={Template2} alt="Template2" />
-          <img src={Template3} alt="Template3" />
+        <div>
+          <img src={UploadVector} alt="upload" />
         </div>
-        <Button className="btn btnLight" style={{ margin: "1em auto" }}>
-          Explore More Template
-        </Button>
+        <p>Drag and drop your CSV file here</p>
+        <div>
+          <span>or</span>
+          <input
+            type="file"
+            id="files"
+            className="file-upload"
+            onChange={onFileChange}
+          />
+          <label htmlFor="files">Browse File</label>
+        </div>
       </div>
-    </div>
+      <section>
+        <img src={CSVSample} alt="cert" />
+      </section>
+      <button onClick={(e) => handleUpload(e)}>Submit CSV</button>
+    </article>
   );
 };
 

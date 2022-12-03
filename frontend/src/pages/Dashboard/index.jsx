@@ -5,7 +5,7 @@ import Card from "./Card";
 import { cardData, nullDataIcon, actionIcon } from "./utils";
 import Button from "../../Component/button";
 import CreateCertificateModal from "./CreateCertificateModal";
-import axios from "axios";
+import { axiosPrivate } from "../../api/axios";
 
 
 const Dashboard = ({
@@ -27,42 +27,55 @@ const Dashboard = ({
   const [openModal, setOpenModal] = useState(false);
 
   useEffect(() => {
-    const fetchData = async () => {
-      setIssuedCert(cardData);
-      const myHeaders = new Headers();
-      myHeaders.append(
-        "Authorization",
-        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzdmOTg3MDQyODc5MzAwNDJmYzE0M2UiLCJpYXQiOjE2NjkzMDY4MjQsImV4cCI6MTY2OTM5MzIyNH0.x5q4XJDcFvN8EWqc4e0el6CZXJtwQjtcrmo3Id0sQlc"
-      );
-
-      let requestOptions = {
-        method: "GET",
-        headers: myHeaders
-      };
-
-      fetch("https://certify-api.onrender.com/api/certificates", requestOptions)
-        .then(response => response.json())
-        .then(result => setData(result))
-        .catch(error => console.log("error", error));
-
-      fetch(
-        "https://certify-api.onrender.com/api/certificates/issuedCertificates",
-        requestOptions
-      )
-        .then(response => response.json())
-        .then(result => {
-          setIssuedCert(
-            issuedCert.map(item =>
-              item.title === "Total Number Issued"
-                ? { ...item, count: result.issuedCertificates }
-                : item
-            )
-          );
-        })
-        .catch(error => console.log("error", error));
-    };
-    fetchData();
+    const getUserCertificates = async () => {
+      try {
+        const res = await axiosPrivate.get('/certificates');
+        console.log('i got here')
+        console.log(res)
+      } catch (error) {
+        console.error(error)
+      }
+    }
+    getUserCertificates();
   }, []);
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     setIssuedCert(cardData);
+  //     const myHeaders = new Headers();
+  //     myHeaders.append(
+  //       "Authorization",
+  //       "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzdmOTg3MDQyODc5MzAwNDJmYzE0M2UiLCJpYXQiOjE2NjkzMDY4MjQsImV4cCI6MTY2OTM5MzIyNH0.x5q4XJDcFvN8EWqc4e0el6CZXJtwQjtcrmo3Id0sQlc"
+  //     );
+
+  //     let requestOptions = {
+  //       method: "GET",
+  //       headers: myHeaders
+  //     };
+
+  //     fetch("https://certify-api.onrender.com/api/certificates", requestOptions)
+  //       .then(response => response.json())
+  //       .then(result => setData(result))
+  //       .catch(error => console.log("error", error));
+
+  //     fetch(
+  //       "https://certify-api.onrender.com/api/certificates/issuedCertificates",
+  //       requestOptions
+  //     )
+  //       .then(response => response.json())
+  //       .then(result => {
+  //         setIssuedCert(
+  //           issuedCert.map(item =>
+  //             item.title === "Total Number Issued"
+  //               ? { ...item, count: result.issuedCertificates }
+  //               : item
+  //           )
+  //         );
+  //       })
+  //       .catch(error => console.log("error", error));
+  //   };
+  //   fetchData();
+  // }, []);
 
   const dataCheck = issuedCert.filter(item => item.count !== 0);
 

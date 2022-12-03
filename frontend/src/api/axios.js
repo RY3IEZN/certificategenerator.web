@@ -1,6 +1,8 @@
 import axios from "axios";
 
 const baseURL="https://certify-api.onrender.com/api"
+const token = localStorage.getItem('refreshToken')
+
 
 export default axios.create({
     baseURL,
@@ -8,8 +10,10 @@ export default axios.create({
 
 const axiosPrivate = axios.create({
   baseURL,
-  headers: { "Content-Type": "application/json" },
-  withCredentials: true,
+  headers: { 
+    "Content-Type": "application/json",
+    "Authorization" : `Bearer ${token}`
+ }
 });
 
 

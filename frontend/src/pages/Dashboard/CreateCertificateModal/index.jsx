@@ -1,8 +1,9 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { UploadCSV } from "../../";
 import "./createmodal.style.scss";
+import { axiosPrivate } from "../../../api/axios";
  
 function CreateCertificateModal({ open, onClose,
     logo,
@@ -26,7 +27,11 @@ function CreateCertificateModal({ open, onClose,
     e.preventDefault()
     navigate('/single_preview')
   }
+
   if (!open) return null;
+ 
+
+
   return (
     <div onClick={onClose} className="modal-wrap">
       <div className="modal-container" onClick={(e) => e.stopPropagation()}>
