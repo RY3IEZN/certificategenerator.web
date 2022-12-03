@@ -17,11 +17,9 @@ import axios from "../../api/axios";
 const UploadCSV = () => {
   const [state, setState] = useState({ active: true });
   const { file, setFile, setCsvData } = useAppProvider();
-  // const postFile = usePostCsvFile()
 
   const toggleState = e => {
     console.log(Object.values(e.target.classList));
-    // console.log( typeof e.target.classList);
     const active = Object.values(e.target.classList).find(
       element => element === "active"
     );
@@ -36,19 +34,16 @@ const UploadCSV = () => {
 
   let formData = new FormData();
 
-  const onFileChange = (e) => {
-    console.log(e.target.files[0])
-
-    if(e.target && e.target.files[0]){
-      formData.append('file', e.target.files[0])
+  const onFileChange = e => {
+    if (e.target && e.target.files[0]) {
+      formData.append("file", e.target.files[0]);
     }
-  }
+  };
 
-  const handleUpload = async (e) => {
+  const handleUpload = async e => {
     e.preventDefault();
     try {
       const res = await axios.post("/upload/csv", formData);
-      console.log(res);
       setCsvData(res);
     } catch (error) {
       console.log(error);

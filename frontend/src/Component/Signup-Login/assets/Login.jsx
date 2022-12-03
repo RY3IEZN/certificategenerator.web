@@ -11,6 +11,8 @@ import keySVG from "./assets/key.svg";
 import { loginUser } from "../api";
 import Input from "../../Input";
 
+import axios from "../../../api/axios";
+
 const Login = ({ access, setAccess }) => {
   const navigate = useNavigate();
   const [type, setType] = useState("password");
@@ -33,47 +35,63 @@ const Login = ({ access, setAccess }) => {
     }
   };
 
-  function handleChange(event) {
-    const { name, value, type, checked } = event.target;
-    setFormData(prevFormData => {
-      return {
-        ...prevFormData,
-        [name]: type === "checkbox" ? checked : value
-      };
-    });
-  }
-  async function loginUser(email, password) {
-    return fetch("https://certify-api.onrender.com/api/auth/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ email: email, password: password })
-    });
-  }
-
-  const handleSubmit = async e => {
-    e.preventDefault();
-    const response = await loginUser(useremail, password);
-    const data = await response.json().catch(error => {
-      setError("apiError", { message: error });
-    });
-
-    const token = data.token;
-    setAccess(token);
-    {
-      data.token ? navigate("/pricing") : navigate("/login");
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    try {
+      const res = await axios.post('/auth/login', {
+        email: useremail, 
+        password
+      });
+      const { refreshToken, userId } = res.data;
+      localStorage.setItem("refreshToken", refreshToken);
+      localStorage.setItem("userId", userId);
+      navigate('/dashboard');
+    } catch (error) {
+      console.error(error)
     }
+  }
 
-    localStorage.setItem("token", token);
-    localStorage.setItem("user", data.userId);
-  };
+  // function handleChange(event) {
+  //   const { name, value, type, checked } = event.target;
+  //   setFormData(prevFormData => {
+  //     return {
+  //       ...prevFormData,
+  //       [name]: type === "checkbox" ? checked : value
+  //     };
+  //   });
+  // }
+  // async function loginUser(email, password) {
+  //   return fetch("https://certify-api.onrender.com/api/auth/login", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json"
+  //     },
+  //     body: JSON.stringify({ email: email, password: password })
+  //   });
+  // }
+
+  // const handleSubmit = async e => {
+  //   e.preventDefault();
+  //   const response = await loginUser(useremail, password);
+  //   const data = await response.json().catch(error => {
+  //     setError("apiError", { message: error });
+  //   });
+
+  //   const token = data.token;
+  //   setAccess(token);
+  //   {
+  //     data.token ? navigate("/pricing") : navigate("/login");
+  //   }
+
+  //   localStorage.setItem("token", token);
+  //   localStorage.setItem("user", data.userId);
+  // };
 
   return (
     <div>
       <div className="authContainer">
         <div className="formDiv">
-          <form onSubmit={handleSubmit}>
+          <form >
             <div id="heading">Welcome to Certgo</div>
             <small id="startGenerating">
               Start generating certificates by creating a Certgo account
@@ -92,12 +110,12 @@ const Login = ({ access, setAccess }) => {
 
             <div id="email">
               <img alt="" src={emailSVG} />
-              <Input
+              <input
                 className="email_input"
                 placeholder=" Email"
                 type="text"
                 name="email"
-                callback={e => setUserEmail(e.target.value)}
+                onChange={e => setUserEmail(e.target.value)}
                 required
                 style={{ border: "none" }}
               />
@@ -105,12 +123,12 @@ const Login = ({ access, setAccess }) => {
             <div id="pwd">
               <img alt="" src={keySVG} />
 
-              <Input
+              <input
                 id="input_id"
                 placeholder="Password"
                 type="text"
                 name="password"
-                callback={e => setPassword(e.target.value)}
+                onChange={e => setPassword(e.target.value)}
                 required
               />
               <span onClick={handleToggle}>
@@ -129,19 +147,20 @@ const Login = ({ access, setAccess }) => {
                 type="checkbox"
                 id="acceptTerms"
                 checked={formData.acceptTerms}
-                onChange={handleChange}
                 name="acceptTerms"
               />
               <label id="labels" htmlFor="acceptTerms">
                 Remember me
               </label>
             </div>
-            <Input
+            {/* <Input
               type="submit"
               onClick={handleSubmit}
               value="Login"
               id="btn"
-            />
+            /> */}
+
+            <button onClick={handleSubmit}></button>
           </form>
           <p className="haveAccount">
             Don’t have a Certgo account?{" "}
