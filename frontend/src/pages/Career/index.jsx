@@ -38,13 +38,13 @@ function Career() {
             <img src={Frame} alt="frame" />
           </div>
           <div className="team">
-            {Persons.map((person) => {
+            {Persons.map(person => {
               return <img key={person.id} src={person.img} alt="" />;
             })}
           </div>
           <div className="text__container">
             <h2>
-              We move <b>fast</b>, we shoot <b>sharp</b>
+              We Move <b>Fast</b>, We Shoot <b>Sharp</b>
             </h2>
             <p>
               Join our amazing team as we make magic happen for businesses that
@@ -124,7 +124,7 @@ function Career() {
             <h3>Engineering</h3>
             <span className="number__badge">3</span>
           </div>
-          {Positions.map((position) => {
+          {Positions.map(position => {
             return (
               <div key={position.id} className="job__cont">
                 <div className="job__desc">
@@ -140,7 +140,7 @@ function Career() {
               </div>
             );
           })}
-          <div className="job__type">
+          <div className="job__type job__type__sec">
             <h3>Customer Success</h3>
             <span className="number__badge">2</span>
           </div>
