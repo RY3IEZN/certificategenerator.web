@@ -2,11 +2,14 @@ import React, { useEffect, useState } from "react";
 import "./dashboard.style.scss";
 import profilePic from "../../assets/images/Ellipse4.png";
 import Card from "./Card";
-import { cardData, nullDataIcon, actionIcon } from "./utils";
+import { cardData, nullDataIcon, tableData } from "./utils";
+import TableRow from "./TableRow";
+
 
 const Dashboard = () => {
   const [data, setData] = useState([]);
   const [issuedCert, setIssuedCert] = useState([...cardData]);
+
 
   useEffect(() => {
     const fetchData = () => {
@@ -19,34 +22,34 @@ const Dashboard = () => {
 
       let requestOptions = {
         method: "GET",
-        headers: myHeaders,
+        headers: myHeaders
       };
 
       fetch("https://certify-api.onrender.com/api/certificates", requestOptions)
-        .then((response) => response.json())
-        .then((result) => setData(result))
-        .catch((error) => console.log("error", error));
+        .then(response => response.json())
+        .then(result => setData(result))
+        .catch(error => console.log("error", error));
 
       fetch(
         "https://certify-api.onrender.com/api/certificates/issuedCertificates",
         requestOptions
       )
-        .then((response) => response.json())
-        .then((result) => {
+        .then(response => response.json())
+        .then(result => {
           setIssuedCert(
-            issuedCert.map((item) =>
+            issuedCert.map(item =>
               item.title === "Total Number Issued"
                 ? { ...item, count: result.issuedCertificates }
                 : item
             )
           );
         })
-        .catch((error) => console.log("error", error));
+        .catch(error => console.log("error", error));
     };
     fetchData();
   }, []);
 
-  const dataCheck = issuedCert.filter((item) => item.count !== 0);
+  const dataCheck = issuedCert.filter(item => item.count !== 0);
 
   return (
     <>
@@ -97,29 +100,10 @@ const Dashboard = () => {
                   <th className="action">ACTION</th>
                 </tr>
               </thead>
-              {data.length > 0 && (
+              {tableData.length > 0 && (
                 <tbody>
-                  {data.map((item, idx) => (
-                    <tr key={idx}>
-                      <td>{item.nameOfOrganization.toUpperCase()}</td>
-                      {item.status === "Issued" ? (
-                        <td>
-                          <button className="cancel">Canceled</button>
-                        </td>
-                      ) : item.status === "Pending" ? (
-                        <td>
-                          <button className="pending">Pending</button>
-                        </td>
-                      ) : (
-                        <td>
-                          <button className="issue">Issued</button>
-                        </td>
-                      )}
-                      <td>{item.date}</td>
-                      {/* <td>{data.length}</td> */}
-                      <td>PDF</td>
-                      <td className="action">{actionIcon()}</td>
-                    </tr>
+                  {tableData.map((item, idx) => (
+                    <TableRow {...item} key={ idx} />
                   ))}
                 </tbody>
               )}
