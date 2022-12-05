@@ -32,6 +32,11 @@ a {
 }
 .section {
   padding: 0 4.8rem;
+  background-color: #f7fefd;
+  @media screen and (max-width: 950px) {
+    padding-right: 3rem;
+    padding-left: 3rem;
+  }
   @media screen and (max-width: $medium) {
     padding: 0 2rem;
   }
@@ -130,6 +135,7 @@ p {
   .section1 {
     margin-top: 3rem;
     text-align: initial;
+
     h2 {
       margin-bottom: 2rem;
       font-size: 39px;
@@ -217,14 +223,21 @@ p {
 
   .section3 {
     margin-top: 3rem;
-    padding: 2rem 6.25rem;
+    padding: 2rem 7rem 6rem;
     text-align: initial;
+    width: 100%;
+    @media screen and (max-width: 950px) {
+      padding: 2rem 5rem 6rem;
+    }
 
     h2 {
       margin-bottom: 2rem;
       font-size: 39px;
       b {
         color: #7b41b4;
+      }
+      @media screen and (max-width: 950px) {
+        font-size: 2.2rem;
       }
       @media screen and (max-width: $medium) {
         font-size: 1.8rem;
@@ -242,59 +255,62 @@ p {
       padding: 2rem 1rem;
     }
     .flex__wrapper {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      @media screen and (max-width: $small) {
-        flex-direction: column;
-        align-items: center;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      width: 100%;
+      gap: 3rem;
+      margin-top: 7rem;
+      align-items: center;
+      @media screen and (max-width: 1154px) {
+        gap: 0rem;
+      }
+      @media screen and (max-width: 950px) {
+        grid-template-columns: 0.8fr 1.2fr;
+        margin-top: 3.5rem;
       }
       .text__container {
-        width: 834px;
+        width: 100%;
         margin-left: 2rem;
         @media screen and (max-width: $small) {
           display: flex;
           flex-direction: column;
           align-items: center;
-          width: 340px;
           margin: initial;
-        }
-        @media screen and (max-width: $sm) {
-          width: 290px;
         }
         h2 {
           font-weight: $bold;
-          font-size: 2.5rem;
+          font-size: 2rem;
           @media screen and (max-width: $medium) {
             font-size: 1.8em;
             width: 100%;
           }
-          @media screen and (max-width: $small) {
-            text-align: center;
-            font-size: 1.1rem;
-            width: 340px;
-          }
-          @media screen and (max-width: $sm) {
-            width: 210px;
+          @media screen and (max-width: 950px) {
+            font-size: 1.4rem;
           }
         }
         p {
           font-family: $fontFamily2;
           margin-top: $mt-2;
           width: 100%;
+          margin-bottom: 2rem;
           @media screen and (max-width: $small) {
             font-size: 0.8rem;
+          }
+          @media screen and (max-width: 950px) {
+            font-size: 0.9rem;
           }
         }
       }
       .image__container {
-        width: 316px;
-        height: 316px;
+        width: 100%;
+        max-width: 28rem;
+
+        @media screen and (max-width: 1154px) {
+          max-width: 28rem;
+        }
         @media screen and (max-width: $small) {
           display: block;
           margin: 0 auto;
-          width: 156px;
-          height: 156px;
         }
         img {
           width: 100%;
@@ -309,12 +325,18 @@ p {
     @media screen and (max-width: $small) {
       padding: 3rem 2rem;
     }
+    @media screen and (max-width: 950px) {
+      padding: 3rem 3rem;
+    }
     h2 {
       color: #08372f;
       font-size: 3rem;
       margin-bottom: 3rem;
       @media screen and (max-width: $small) {
         font-size: 2rem;
+      }
+      @media screen and (max-width: 950px) {
+        font-size: 2.2rem;
       }
     }
     form {
