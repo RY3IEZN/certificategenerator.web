@@ -1,10 +1,48 @@
-export const actionIcon = () => (
-  <svg
+export function ActionIcon() {
+  return (
+  //   <div className="dropdown">
+  //   <svg
+  //   width="6"
+  //   height="17"
+  //   viewBox="0 0 6 17"
+  //   fill="none"
+  //   xmlns="http://www.w3.org/2000/svg"
+  //   className='dropbtn'
+  // >
+  //   <path
+  //     d="M1.33398 14.3333C1.33398 15.25 2.08398 16 3.00065 16C3.91732 16 4.66732 15.25 4.66732 14.3333C4.66732 13.4167 3.91732 12.6667 3.00065 12.6667C2.08398 12.6667 1.33398 13.4167 1.33398 14.3333ZM1.33398 2.66667C1.33398 3.58333 2.08398 4.33333 3.00065 4.33333C3.91732 4.33333 4.66732 3.58333 4.66732 2.66667C4.66732 1.75 3.91732 1 3.00065 1C2.08398 1 1.33398 1.75 1.33398 2.66667ZM1.33398 8.5C1.33398 9.41667 2.08398 10.1667 3.00065 10.1667C3.91732 10.1667 4.66732 9.41667 4.66732 8.5C4.66732 7.58333 3.91732 6.83333 3.00065 6.83333C2.08398 6.83333 1.33398 7.58333 1.33398 8.5Z"
+  //     stroke="#FFFFFF"
+  //     strokeWidth="1.5"
+  //   />
+  // </svg>
+  // <div class="dropdown-content">
+  //             <button
+  //               onClick={(e) => {
+  //                 e.preventDefault();
+  //                 exportComponentAsPNG(certificateWrapper, {
+  //                   fileName: `${awardeeName}`,
+  //                   html2CanvasOptions: { backgroundColor: "#fff" },
+  //                 });
+  //               }}
+  //               className="png-button"
+  //             >
+  //               PNG
+  //             </button>
+  //             <button className="pdf-button">
+  //               PDF
+  //             </button>
+  //             <button>ZIP</button>
+  //           </div>
+  // </div>
+  <div class="dropdown">
+            <button class="dropbtn">
+            <svg
     width="6"
     height="17"
     viewBox="0 0 6 17"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    className='dropbtn'
   >
     <path
       d="M1.33398 14.3333C1.33398 15.25 2.08398 16 3.00065 16C3.91732 16 4.66732 15.25 4.66732 14.3333C4.66732 13.4167 3.91732 12.6667 3.00065 12.6667C2.08398 12.6667 1.33398 13.4167 1.33398 14.3333ZM1.33398 2.66667C1.33398 3.58333 2.08398 4.33333 3.00065 4.33333C3.91732 4.33333 4.66732 3.58333 4.66732 2.66667C4.66732 1.75 3.91732 1 3.00065 1C2.08398 1 1.33398 1.75 1.33398 2.66667ZM1.33398 8.5C1.33398 9.41667 2.08398 10.1667 3.00065 10.1667C3.91732 10.1667 4.66732 9.41667 4.66732 8.5C4.66732 7.58333 3.91732 6.83333 3.00065 6.83333C2.08398 6.83333 1.33398 7.58333 1.33398 8.5Z"
@@ -12,7 +50,24 @@ export const actionIcon = () => (
       strokeWidth="1.5"
     />
   </svg>
-);
+            </button>
+            <div class="dropdown-content">
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                }}
+                className=""
+              >
+                View &nbsp;
+              </button>
+              <button className="">
+                Edit &nbsp;&nbsp;
+              </button>
+              <button>Delete</button>
+            </div>
+          </div>
+  )
+  };
 export const cardIconOne = () => (
     <svg
     width="20"

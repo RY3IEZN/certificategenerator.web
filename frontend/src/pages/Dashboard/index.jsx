@@ -2,14 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./dashboard.style.scss";
 import profilePic from "../../assets/images/Ellipse4.png";
 import Card from "./Card";
-import { dummyData, cardData, nullDataIcon, actionIcon } from "./utils";
-import Button from "../../Component/button";
-import CreateCertificateModal from "./CreateCertificateModal";
-import { axiosPrivate } from "../../api/axios";
-import useAppProvider from "../../hooks/useAppProvider";
-import Swal from "sweetalert2";
-import { Loader } from "../../Component";
-import TableRow from "./TableRow";
+import { cardData, nullDataIcon, ActionIcon } from "./utils";
 
 const Dashboard = ({
   logo,
@@ -222,11 +215,26 @@ const Dashboard = ({
               {data.length > 0 && (
                 <tbody>
                   {data.map((item, idx) => (
-                    <TableRow
-                      item={item}
-                      key={idx}
-                      handleChangeCertificateStatus={handleChangeCertificateStatus}
-                    />
+                    <tr key={idx}>
+                      <td>{item.nameOfOrganization.toUpperCase()}</td>
+                      {item.status === "Issued" ? (
+                        <td>
+                          <button className="cancel">Canceled</button>
+                        </td>
+                      ) : item.status === "Pending" ? (
+                        <td>
+                          <button className="pending">Pending</button>
+                        </td>
+                      ) : (
+                        <td>
+                          <button className="issue">Issued</button>
+                        </td>
+                      )}
+                      <td>{item.date}</td>
+                      <td>{data.length}</td>
+                      <td>PDF</td>
+                      <td className="action">{ActionIcon()}</td>
+                    </tr>
                   ))}
                 </tbody>
               )}
