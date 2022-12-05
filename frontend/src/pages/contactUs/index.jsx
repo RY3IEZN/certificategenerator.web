@@ -1,14 +1,14 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import {
   ContactChatIcon,
   ContactLocationIcon,
-  ContactPhoneIcon,
+  ContactPhoneIcon
 } from "../../assets";
 import Button from "../../Component/button";
 import Inputfield from "../../Component/inputField";
 import TextArea from "../../Component/textarea";
 import "./contact.scss";
-import axios from "axios"
+import axios from "axios";
 
 const ContactUs = () => {
   const [firstName, setFirstName] = useState("");
@@ -17,8 +17,10 @@ const ContactUs = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [error, setError] = useState();
   const [success, setSuccess] = useState(false);
+  
+
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -30,9 +32,13 @@ const ContactUs = () => {
         lastName,
         email,
         phoneNumber,
-        message,
+        message
       });
-
+       setFirstName("");
+       setLastName("");
+       setEmail("");
+       setPhoneNumber("");
+       setMessage("");
       setLoading(false);
       setSuccess(true);
     } catch (err) {
@@ -91,33 +97,45 @@ const ContactUs = () => {
                 placeholder="First name"
                 label="First Name"
                 type="text"
-                onChange={(e) => setFirstName(e.target.value)}
+                value={firstName}
+                onChange={e => setFirstName(e.target.value)}
+                required
               />
               <Inputfield
                 placeholder="First name"
                 label="Last Name"
                 type="text"
-                onChange={(e) => setLastName(e.target.value)}
+                value={lastName}
+                onChange={e => setLastName(e.target.value)}
+                required
               />
             </div>
             <Inputfield
               label=" Email"
               type="email"
               placeholder="gigtot@gmail.com"
-              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              required
             />
             <Inputfield
               label=" Phone no"
               placeholder="+234900000 "
-              type="tel"
-              onChange={(e) => setPhoneNumber(e.target.value)}
+              type="number"
+              value={phoneNumber}
+              maxlength='13'
+              pattern='[0-9]*'
+              onChange={e => setPhoneNumber(e.target.value)}
+              required
             />
             <TextArea
               placeholder="type message here"
               label="Message"
-              onChange={(e) => setMessage(e.target.value)}
+              value={message}
+              onChange={e => setMessage(e.target.value)}
+              required
             />
-            <Button width="100%">
+            <Button width="100%" >
               {loading ? (
                 <div className="loading"></div>
               ) : success ? (
