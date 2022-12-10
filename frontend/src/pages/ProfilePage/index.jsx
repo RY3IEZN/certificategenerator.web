@@ -3,11 +3,13 @@ import axios from 'axios'
 import Modal from '../../Component/Modal'
 import {useNavigate} from 'react-router-dom'
 import "./profile.style.scss";
-import Avatar from "../../assets/images/Ellipse4.png"
+import Avatar from "./assets/profileavatar.jpg"
 import Input from "../../Component/Input";
 import Loader from "../../Component/ButtonLoader";
 import { Toast } from '../../Component/ToastAlert'
 import { useEffect } from "react";
+
+
 
 const ProfilePage = () => {
   const navigate = useNavigate()
@@ -20,7 +22,7 @@ const ProfilePage = () => {
   phoneNumber:"",
   email:""
 })
-
+  const [profileavatar, setprofileAvatar] = useState(null)
 
 
 const userId = localStorage.getItem("user");
@@ -84,6 +86,7 @@ const userId = localStorage.getItem("user");
     
     const userData = JSON.parse(localStorage.getItem("userData"))
     const token = userData.token;
+
     //console.log(token)
     try {
       const headers = {
@@ -117,6 +120,26 @@ const userId = localStorage.getItem("user");
       console.log(error);
     }
   };
+     async function uploadAvatar(e){
+      e.preventDefault()
+      if(profileavatar){
+        let formData = new FormData();
+        formData.append("avatar", profileavatar);
+        
+        const response = await fetch('https://certgo.hng.tech/api/profile/avatar',{
+            headers: {
+              "Content-Type": "multipart/form-data",
+              "Authorization": `Bearer ${token}`            
+            },
+            method: "POST",
+            body: formData,           
+          });
+          console.log(formData)
+          const data = await response.json()
+          console.log(data)
+      }
+        //console.log(profileavatar)
+     }
 
   function handleDelete(){
     const userData = JSON.parse(localStorage.getItem("userData"))
@@ -143,28 +166,29 @@ const userId = localStorage.getItem("user");
       .catch(err=>console.log(console.error()))
       .finally(()=>setIsLoadingDelete(false))   
 }
+      
 
   return (
     <div className="profile-page">
       <div>
       <div className="user-info">
         <div className="user-avatar">
-          <img src={Avatar} className="avatar" alt="profile-pic" />
+          <img src={Avatar} className="avatar" alt="profile-pic" />         
+        </div>
+        <div className="mb-2">          
+          <form className="data-avatar">
+            <input type="text" value={data.name} className="avatar-name" />
+            <input type="text" value={data.job} className="avatar-job"  />
+            <input type="text" value={data.location} className="avatar-location"  />
+          </form>           
         </div>
         <div className="mb-2">
-          <h3>Olamiposi Benjamin</h3>
-          <p className="job-title">Advisor at Stripe Inc.</p>
-          <div className="location-wrapper">
-            <span></span><span>Lagos, Nigeria</span>
-          </div>
+          <p>Current Plan</p>
+          <span className="lite-plan-exp">No subscription yet</span>
         </div>
         <div className="mb-2">
-          <p>Lite Plan</p>
-          <span className="lite-plan-exp">Expires 23rd December 2022</span>
-        </div>
-        <div className="mb-2">
-          <p>Last bulk certificate generated</p>
-          <span className="last-gen-date">12th November 2022</span>
+          <p>Last certificate generated</p>
+          <span className="last-gen-date">No certificate yet</span>
         </div>
 
         <div className="btn-wrapper">
@@ -205,7 +229,7 @@ const userId = localStorage.getItem("user");
 
             <Input className="form-group"
                 label={"Email"}
-                callback={handleOnchange} 
+                
                 id="email" 
                 type="email" 
                 placeholder="E-mail"
