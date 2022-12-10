@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import DropDown from './Dropdown'
+import axios from "axios";
 
 import "./navbar.style.scss";
 import logo from "../../assets/images/navbarIcon.png";
@@ -26,6 +27,7 @@ function Navbar() {
     setSwitchFa(!switchFa);
   };
 
+  
   const links = [
     {
       id: 1,

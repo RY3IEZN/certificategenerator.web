@@ -15,6 +15,17 @@ import CaretDown from '../../../assets/svgs/caret-up.svg'
      drop.classList.toggle("hidden")
      caretDown.classList.toggle('caret-down')
   }
+  const accessToken = JSON.parse(localStorage.getItem("userData")).token
+  const baseURL = "https://certgo.hng.tech/api";
+  const axiosPrivate = axios.create({
+    baseURL,
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${accessToken}`
+    }
+  });
+  
+ 
 
   return (
     <div>
